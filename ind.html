@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-71YETQYR21"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-71YETQYR21');
+</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>JORGE Industrial — Leitura Estrutural para Inspeção e Falhas</title>
+
+<link rel="icon" type="image/x-icon" href="jorge_icon.ico">
+
+<meta name="description" content="JORGE Industrial aplica leitura estrutural a scans industriais, inspeção técnica e manutenção preditiva. Detecte mudanças estruturais antes da falha visível.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#05070b;
+color:#ffffff;
+line-height:1.5;
+}
+.container{
+width:100%;
+max-width:1180px;
+margin:auto;
+padding:0 24px;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(5,7,11,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:800;
+}
+
+.logo img{
+height:38px;
+width:auto;
+display:block;
+}
+
+.nav-links{
+display:flex;
+gap:18px;
+align-items:center;
+}
+
+.nav-links a{
+color:#dbe5f0;
+text-decoration:none;
+font-size:14px;
+}
+
+.nav-links a:hover{
+color:#ffffff;
+}
+
+.hero{
+padding:96px 0 76px;
+text-align:center;
+background:
+radial-gradient(circle at top, rgba(241,195,90,.18), transparent 38%),
+radial-gradient(circle at 72% 20%, rgba(255,120,0,.10), transparent 34%),
+linear-gradient(180deg,#05070b 0%,#07111d 100%);
+}
+
+.badge{
+display:inline-block;
+padding:8px 14px;
+border:1px solid rgba(255,255,255,.10);
+border-radius:999px;
+font-size:13px;
+color:#ffe0a6;
+margin-bottom:24px;
+background:rgba(241,195,90,.08);
+}
+
+.hero h1{
+font-size:62px;
+font-weight:900;
+line-height:1.05;
+margin-bottom:18px;
+}
+
+.hero p{
+max-width:940px;
+margin:0 auto 18px;
+font-size:23px;
+color:#d8e2ee;
+}
+
+.hero .sub{
+font-size:18px;
+color:#91a8c6;
+max-width:880px;
+margin-bottom:34px;
+}
+
+.cta{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-bottom:34px;
+}
+
+.btn{
+padding:14px 24px;
+border-radius:10px;
+text-decoration:none;
+font-weight:800;
+font-size:15px;
+transition:.2s;
+display:inline-block;
+}
+
+.btn-primary{
+background:#f1c35a;
+color:#1c1400;
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+background:#ffd37a;
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,.14);
+color:#ffffff;
+background:rgba(255,255,255,.03);
+}
+
+.btn-secondary:hover{
+transform:translateY(-2px);
+background:rgba(255,255,255,.07);
+}
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+margin-top:18px;
+}
+
+.metric{
+padding:18px;
+border-radius:14px;
+background:#0b1320;
+border:1px solid rgba(255,255,255,.06);
+}
+
+.metric strong{
+display:block;
+font-size:23px;
+margin-bottom:6px;
+}
+
+.metric span{
+font-size:14px;
+color:#8fa4c0;
+}
+
+section{
+padding:78px 0;
+}
+
+.section-title{
+font-size:38px;
+text-align:center;
+margin-bottom:14px;
+}
+
+.section-sub{
+text-align:center;
+max-width:850px;
+margin:0 auto 44px;
+color:#9db0c7;
+font-size:18px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:18px;
+}
+
+.card{
+background:#0b1320;
+border:1px solid rgba(255,255,255,.06);
+border-radius:16px;
+padding:26px;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+border-color:rgba(241,195,90,.35);
+}
+
+.card h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#9db0c7;
+font-size:15px;
+}
+
+.highlight{
+background:linear-gradient(135deg,#101014,#1c1507);
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.case-box{
+max-width:960px;
+margin:auto;
+background:#0b1320;
+border:1px solid rgba(241,195,90,.24);
+border-radius:24px;
+padding:34px;
+box-shadow:0 24px 80px rgba(0,0,0,.38);
+}
+
+.case-box h2{
+font-size:36px;
+margin-bottom:14px;
+}
+
+.case-box p{
+color:#b6c6dc;
+font-size:18px;
+margin-bottom:16px;
+}
+
+.statement{
+font-size:30px;
+font-weight:900;
+line-height:1.18;
+color:#ffffff;
+margin:24px 0;
+padding:24px;
+border-left:4px solid #f1c35a;
+background:rgba(241,195,90,.06);
+border-radius:14px;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+margin-top:24px;
+}
+
+.step{
+background:#07111d;
+border:1px solid rgba(255,255,255,.06);
+border-radius:14px;
+padding:18px;
+}
+
+.step strong{
+display:block;
+color:#f1c35a;
+margin-bottom:8px;
+}
+
+.step span{
+color:#9db0c7;
+font-size:14px;
+}
+
+.band{
+background:linear-gradient(90deg,#0b1320,#1a160d);
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.band-inner{
+padding:56px 0;
+text-align:center;
+}
+
+.band-inner h2{
+font-size:36px;
+margin-bottom:12px;
+}
+
+.band-inner p{
+color:#9db0c7;
+font-size:18px;
+margin-bottom:26px;
+}
+
+footer{
+padding:34px 0;
+text-align:center;
+color:#7f90a8;
+font-size:14px;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+@media(max-width:980px){
+.hero h1{font-size:50px}
+.metrics{grid-template-columns:repeat(2,1fr)}
+.steps{grid-template-columns:1fr}
+}
+
+@media(max-width:640px){
+.nav{flex-direction:column;gap:14px}
+.nav-links{flex-wrap:wrap;justify-content:center}
+.hero{padding:70px 0 56px}
+.hero h1{font-size:38px}
+.hero p{font-size:20px}
+.hero .sub{font-size:16px}
+.metrics{grid-template-columns:1fr}
+.section-title{font-size:30px}
+.statement{font-size:22px}
+.case-box{padding:24px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+<div class="logo">
+<img src="jorge_logo.png" alt="Logo JORGE Engine">
+<span>JORGE Industrial</span>
+</div>
+
+<div class="nav-links">
+<a href="index.html">Plataforma</a>
+<a href="#falhas">Falhas</a>
+<a href="#valor">Valor</a>
+<a href="#piloto">Piloto</a>
+<a href="#contato">Contato</a>
+</div>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+
+<div class="badge">JORGE Industrial • Estrutura antes da falha</div>
+
+<h1>Falhas raramente surgem do nada.<br>A estrutura muda antes.</h1>
+
+<p>
+O JORGE Industrial aplica leitura estrutural a scans técnicos, inspeções e ativos físicos para detectar mudanças relevantes antes do problema se tornar evidente.
+</p>
+
+<p class="sub">
+Uma nova camada para manutenção preditiva, comparação periódica e leitura visual de ambientes industriais complexos.
+</p>
+
+<div class="cta">
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20conhecer%20o%20JORGE%20Industrial." target="_blank">Falar sobre piloto industrial</a>
+<a class="btn btn-secondary" href="#piloto">Ver piloto técnico</a>
+<a class="btn btn-secondary" href="index.html">Ver plataforma</a>
+</div>
+
+<div class="metrics">
+
+<div class="metric">
+<strong>E57 / PLY</strong>
+<span>scans industriais alvo</span>
+</div>
+
+<div class="metric">
+<strong>T0 → T1</strong>
+<span>comparação estrutural temporal</span>
+</div>
+
+<div class="metric">
+<strong>Local</strong>
+<span>dados sensíveis sob controle</span>
+</div>
+
+<div class="metric">
+<strong>Viewer</strong>
+<span>inspeção navegável</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="falhas">
+<div class="container">
+
+<h2 class="section-title">Onde a dor aparece</h2>
+
+<p class="section-sub">
+Paradas inesperadas, corrosão, deformação e degradação costumam gerar custo alto. Detectar cedo muda o jogo.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Parada não planejada</h3>
+<p>Horas ou dias de produção perdidos podem custar muito mais que inspeção preventiva.</p>
+</div>
+
+<div class="card">
+<h3>Inspeção tardia</h3>
+<p>Muitas vezes o problema só aparece quando já está visível demais.</p>
+</div>
+
+<div class="card">
+<h3>Comparação difícil</h3>
+<p>Scans periódicos existem, mas comparar visualmente grandes volumes é trabalhoso.</p>
+</div>
+
+<div class="card">
+<h3>Ruído operacional</h3>
+<p>Ambientes industriais densos dificultam enxergar o que realmente mudou.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="highlight" id="valor">
+<div class="container">
+
+<div class="case-box">
+
+<h2>O diferencial central</h2>
+
+<p>
+Se a estrutura muda antes da falha final, então observar mudança estrutural pode gerar vantagem operacional.
+</p>
+
+<div class="statement">
+Corrosão, deformação e perda de continuidade podem surgir como sinal estrutural antes do colapso evidente.
+</div>
+
+<p>
+O JORGE busca destacar conectividade, densidade, fragmentação e alterações espaciais em scans técnicos sucessivos.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Comparação T0/T1</h3>
+<p>Observe mudanças entre inspeções periódicas.</p>
+</div>
+
+<div class="card">
+<h3>Leitura visual rápida</h3>
+<p>Viewer navegável para entender o ambiente técnico.</p>
+</div>
+
+<div class="card">
+<h3>Priorização</h3>
+<p>Ajuda a direcionar atenção humana para regiões críticas.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Aplicações iniciais</h2>
+
+<p class="section-sub">
+Primeiras frentes práticas para pilotos industriais.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Plantas industriais</h3>
+<p>Ambientes densos com tubulações, estruturas e ativos múltiplos.</p>
+</div>
+
+<div class="card">
+<h3>Tanques e estruturas</h3>
+<p>Leitura geométrica e comparação de mudanças ao longo do tempo.</p>
+</div>
+
+<div class="card">
+<h3>Galpões e ativos físicos</h3>
+<p>Scans periódicos para inspeção e acompanhamento.</p>
+</div>
+
+<div class="card">
+<h3>Manutenção preditiva</h3>
+<p>Nova camada de evidência visual para decisões de manutenção.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="piloto">
+<div class="container">
+
+<h2 class="section-title">Piloto Técnico Industrial</h2>
+
+<p class="section-sub">
+Use scans reais da operação para validar se o JORGE agrega valor ao seu fluxo.
+</p>
+
+<div class="steps">
+
+<div class="step">
+<strong>1. Envie um scan</strong>
+<span>E57, PLY, PCD ou dataset técnico equivalente.</span>
+</div>
+
+<div class="step">
+<strong>2. Processamos</strong>
+<span>Geramos leitura estrutural e viewer navegável.</span>
+</div>
+
+<div class="step">
+<strong>3. Avaliamos</strong>
+<span>Reunião objetiva para medir aderência operacional.</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="band" id="contato">
+<div class="container band-inner">
+
+<h2>Tem inspeção cara e complexa?</h2>
+
+<p>
+Vamos conversar sobre como testar leitura estrutural com seus próprios dados.
+</p>
+
+<div class="cta">
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20avaliar%20um%20piloto%20JORGE%20Industrial." target="_blank">Entrar em contato</a>
+<a class="btn btn-secondary" href="index.html">Voltar para plataforma</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+JORGE Industrial © 2026 • Estrutura antes da falha
+</div>
+</footer>
+
+</body>
+</html>
