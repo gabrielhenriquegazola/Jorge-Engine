@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-71YETQYR21"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-71YETQYR21');
+</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>JORGE LiDAR — Leitura Estrutural para Nuvens de Pontos Massivas</title>
+
+<link rel="icon" type="image/x-icon" href="jorge_icon.ico">
+
+<meta name="description" content="JORGE LiDAR transforma nuvens de pontos massivas em leitura estrutural clara. Processamento local, visualização interativa e foco em relevância espacial.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#05070b;
+color:#ffffff;
+line-height:1.5;
+}
+.container{
+width:100%;
+max-width:1180px;
+margin:auto;
+padding:0 24px;
+}
+
+header{
+position:sticky;
+top:0;
+z-index:100;
+background:rgba(5,7,11,.92);
+backdrop-filter:blur(10px);
+border-bottom:1px solid rgba(255,255,255,.06);
+}
+
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+display:flex;
+align-items:center;
+gap:12px;
+font-size:24px;
+font-weight:800;
+}
+
+.logo img{
+height:38px;
+width:auto;
+display:block;
+}
+
+.nav-links{
+display:flex;
+gap:18px;
+align-items:center;
+}
+
+.nav-links a{
+color:#dbe5f0;
+text-decoration:none;
+font-size:14px;
+}
+
+.nav-links a:hover{
+color:#ffffff;
+}
+
+.hero{
+padding:96px 0 76px;
+text-align:center;
+background:
+radial-gradient(circle at top, rgba(39,194,255,.22), transparent 38%),
+radial-gradient(circle at 70% 20%, rgba(241,195,90,.10), transparent 35%),
+linear-gradient(180deg,#05070b 0%,#07111d 100%);
+}
+
+.badge{
+display:inline-block;
+padding:8px 14px;
+border:1px solid rgba(255,255,255,.10);
+border-radius:999px;
+font-size:13px;
+color:#bfe8ff;
+margin-bottom:24px;
+background:rgba(39,194,255,.08);
+}
+
+.hero h1{
+font-size:62px;
+font-weight:900;
+line-height:1.05;
+margin-bottom:18px;
+}
+
+.hero p{
+max-width:940px;
+margin:0 auto 18px;
+font-size:23px;
+color:#d8e2ee;
+}
+
+.hero .sub{
+font-size:18px;
+color:#91a8c6;
+max-width:880px;
+margin-bottom:34px;
+}
+
+.cta{
+display:flex;
+justify-content:center;
+gap:14px;
+flex-wrap:wrap;
+margin-bottom:34px;
+}
+
+.btn{
+padding:14px 24px;
+border-radius:10px;
+text-decoration:none;
+font-weight:800;
+font-size:15px;
+transition:.2s;
+display:inline-block;
+}
+
+.btn-primary{
+background:#27c2ff;
+color:#03131f;
+}
+
+.btn-primary:hover{
+transform:translateY(-2px);
+background:#55d1ff;
+}
+
+.btn-secondary{
+border:1px solid rgba(255,255,255,.14);
+color:#ffffff;
+background:rgba(255,255,255,.03);
+}
+
+.btn-secondary:hover{
+transform:translateY(-2px);
+background:rgba(255,255,255,.07);
+}
+
+.metrics{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:14px;
+margin-top:18px;
+}
+
+.metric{
+padding:18px;
+border-radius:14px;
+background:#0b1320;
+border:1px solid rgba(255,255,255,.06);
+}
+
+.metric strong{
+display:block;
+font-size:23px;
+margin-bottom:6px;
+}
+
+.metric span{
+font-size:14px;
+color:#8fa4c0;
+}
+
+section{
+padding:78px 0;
+}
+
+.section-title{
+font-size:38px;
+text-align:center;
+margin-bottom:14px;
+}
+
+.section-sub{
+text-align:center;
+max-width:850px;
+margin:0 auto 44px;
+color:#9db0c7;
+font-size:18px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:18px;
+}
+
+.card{
+background:#0b1320;
+border:1px solid rgba(255,255,255,.06);
+border-radius:16px;
+padding:26px;
+transition:.2s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+border-color:rgba(39,194,255,.35);
+}
+
+.card h3{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.card p{
+color:#9db0c7;
+font-size:15px;
+}
+
+.highlight{
+background:linear-gradient(135deg,#07111d,#0d1b2c);
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.case-box{
+max-width:960px;
+margin:auto;
+background:#0b1320;
+border:1px solid rgba(39,194,255,.24);
+border-radius:24px;
+padding:34px;
+box-shadow:0 24px 80px rgba(0,0,0,.38);
+}
+
+.case-box h2{
+font-size:36px;
+margin-bottom:14px;
+}
+
+.case-box p{
+color:#b6c6dc;
+font-size:18px;
+margin-bottom:16px;
+}
+
+.statement{
+font-size:30px;
+font-weight:900;
+line-height:1.18;
+color:#ffffff;
+margin:24px 0;
+padding:24px;
+border-left:4px solid #27c2ff;
+background:rgba(39,194,255,.06);
+border-radius:14px;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+margin-top:24px;
+}
+
+.step{
+background:#07111d;
+border:1px solid rgba(255,255,255,.06);
+border-radius:14px;
+padding:18px;
+}
+
+.step strong{
+display:block;
+color:#27c2ff;
+margin-bottom:8px;
+}
+
+.step span{
+color:#9db0c7;
+font-size:14px;
+}
+
+.band{
+background:linear-gradient(90deg,#0b1320,#101c2d);
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.band-inner{
+padding:56px 0;
+text-align:center;
+}
+
+.band-inner h2{
+font-size:36px;
+margin-bottom:12px;
+}
+
+.band-inner p{
+color:#9db0c7;
+font-size:18px;
+margin-bottom:26px;
+}
+
+footer{
+padding:34px 0;
+text-align:center;
+color:#7f90a8;
+font-size:14px;
+border-top:1px solid rgba(255,255,255,.05);
+}
+
+@media(max-width:980px){
+.hero h1{font-size:50px}
+.metrics{grid-template-columns:repeat(2,1fr)}
+.steps{grid-template-columns:1fr}
+}
+
+@media(max-width:640px){
+.nav{flex-direction:column;gap:14px}
+.nav-links{flex-wrap:wrap;justify-content:center}
+.hero{padding:70px 0 56px}
+.hero h1{font-size:38px}
+.hero p{font-size:20px}
+.hero .sub{font-size:16px}
+.metrics{grid-template-columns:1fr}
+.section-title{font-size:30px}
+.statement{font-size:22px}
+.case-box{padding:24px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+
+<div class="logo">
+<img src="jorge_logo.png" alt="Logo JORGE Engine">
+<span>JORGE LiDAR</span>
+</div>
+
+<div class="nav-links">
+<a href="index.html">Plataforma</a>
+<a href="#valor">Valor</a>
+<a href="#performance">Performance</a>
+<a href="#piloto">Piloto</a>
+<a href="#contato">Contato</a>
+</div>
+
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+
+<div class="badge">JORGE LiDAR • Nuvens massivas com leitura clara</div>
+
+<h1>132 milhões de pontos.<br>Rodando localmente.</h1>
+
+<p>
+O JORGE LiDAR transforma nuvens de pontos densas em leitura estrutural navegável para engenharia, topografia, cidades e infraestrutura.
+</p>
+
+<p class="sub">
+Processamento local, visualização interativa, relevância espacial e performance em datasets que desafiam viewers convencionais.
+</p>
+
+<div class="cta">
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20testar%20o%20JORGE%20LiDAR%20com%20meu%20arquivo." target="_blank">Testar com meu arquivo</a>
+<a class="btn btn-secondary" href="#piloto">Ver piloto técnico</a>
+<a class="btn btn-secondary" href="index.html">Ver plataforma</a>
+</div>
+
+<div class="metrics">
+
+<div class="metric">
+<strong>132M+</strong>
+<span>pontos processados em validação</span>
+</div>
+
+<div class="metric">
+<strong>Local</strong>
+<span>execução desktop</span>
+</div>
+
+<div class="metric">
+<strong>LAS / LAZ / E57</strong>
+<span>formatos alvo</span>
+</div>
+
+<div class="metric">
+<strong>Viewer</strong>
+<span>filtros, foco e navegação</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="valor">
+<div class="container">
+
+<h2 class="section-title">O problema não é gerar o scan. É interpretar rápido.</h2>
+
+<p class="section-sub">
+Empresas e equipes técnicas já possuem drones, sensores e scanners. O gargalo frequentemente está em transformar milhões de pontos em leitura útil.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Visualização confusa</h3>
+<p>Grandes nuvens podem virar massa visual sem hierarquia clara.</p>
+</div>
+
+<div class="card">
+<h3>Tempo de análise alto</h3>
+<p>Horas navegando arquivos para encontrar o que importa.</p>
+</div>
+
+<div class="card">
+<h3>Hardware pressionado</h3>
+<p>Datasets densos podem travar fluxos comuns de trabalho.</p>
+</div>
+
+<div class="card">
+<h3>Decisão lenta</h3>
+<p>Sem leitura clara, reuniões e operações perdem velocidade.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="highlight" id="performance">
+<div class="container">
+
+<div class="case-box">
+
+<h2>O diferencial central</h2>
+
+<p>
+O JORGE LiDAR foi construído para lidar com volume real, não apenas demos pequenas.
+</p>
+
+<div class="statement">
+132 milhões de pontos em arquivo LAZ processados e navegáveis em ambiente desktop local.
+</div>
+
+<p>
+Isso significa sair do discurso e entrar em capacidade operacional concreta.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Escala</h3>
+<p>Projetado para datasets extensos e densos.</p>
+</div>
+
+<div class="card">
+<h3>Leitura estrutural</h3>
+<p>Destaca regiões relevantes e organização espacial.</p>
+</div>
+
+<div class="card">
+<h3>Execução local</h3>
+<p>Sem depender de upload para nuvem pública.</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section>
+<div class="container">
+
+<h2 class="section-title">Onde pode ajudar</h2>
+
+<p class="section-sub">
+Primeiras aplicações comerciais e técnicas para a vertical LiDAR.
+</p>
+
+<div class="grid">
+
+<div class="card">
+<h3>Topografia</h3>
+<p>Terreno, curvas, relevo e leitura espacial ampla.</p>
+</div>
+
+<div class="card">
+<h3>Cidades</h3>
+<p>Infraestrutura urbana, volumes e organização territorial.</p>
+</div>
+
+<div class="card">
+<h3>Vegetação</h3>
+<p>Camadas, densidade e estrutura ambiental.</p>
+</div>
+
+<div class="card">
+<h3>Inspeção</h3>
+<p>Ambientes técnicos, obras e comparação visual.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="piloto">
+<div class="container">
+
+<h2 class="section-title">Piloto Técnico JORGE LiDAR</h2>
+
+<p class="section-sub">
+Traga um arquivo real e valide se o JORGE gera valor no seu fluxo.
+</p>
+
+<div class="steps">
+
+<div class="step">
+<strong>1. Envie amostra</strong>
+<span>Arquivo LAS, LAZ, E57 ou dataset equivalente.</span>
+</div>
+
+<div class="step">
+<strong>2. Processamos</strong>
+<span>Geramos leitura estrutural e viewer navegável.</span>
+</div>
+
+<div class="step">
+<strong>3. Avaliamos juntos</strong>
+<span>Reunião curta para medir aderência real.</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="band" id="contato">
+<div class="container band-inner">
+
+<h2>Tem um dataset pesado hoje?</h2>
+
+<p>
+Vamos testar com dado real e ver se o JORGE reduz atrito operacional.
+</p>
+
+<div class="cta">
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20tenho%20um%20dataset%20LiDAR%20e%20quero%20testar%20o%20JORGE." target="_blank">Falar no WhatsApp</a>
+<a class="btn btn-secondary" href="index.html">Voltar para plataforma</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+JORGE LiDAR © 2026 • Leitura estrutural para nuvens de pontos massivas
+</div>
+</footer>
+
+</body>
+</html>
