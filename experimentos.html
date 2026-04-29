@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-71YETQYR21"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-71YETQYR21');
+</script>
+
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JORGE Engine — Evidências Técnicas</title>
+<link rel="icon" type="image/x-icon" href="jorge_icon.ico">
+<meta name="description" content="Evidências técnicas do JORGE Engine: conectividade, morfologia estrutural, robustez e validação comparativa.">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:#05070b;color:#fff;line-height:1.5}
+.container{width:100%;max-width:1180px;margin:auto;padding:0 24px}
+
+header{position:sticky;top:0;z-index:100;background:rgba(5,7,11,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;gap:16px}
+.logo{display:flex;align-items:center;gap:12px;font-size:24px;font-weight:800;text-decoration:none;color:#fff}
+.logo img{height:38px;width:auto;display:block}
+.nav-links{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+.nav-links a{color:#dbe5f0;text-decoration:none;font-size:14px;transition:.2s}
+.nav-links a:hover{color:#fff}
+
+.hero{padding:96px 0 76px;text-align:center;background:
+radial-gradient(circle at top,rgba(39,194,255,.20),transparent 38%),
+radial-gradient(circle at 70% 18%,rgba(241,195,90,.10),transparent 34%),
+linear-gradient(180deg,#05070b 0%,#07111d 100%)}
+.badge{display:inline-block;padding:8px 14px;border:1px solid rgba(255,255,255,.10);border-radius:999px;font-size:13px;color:#bfe8ff;margin-bottom:24px;background:rgba(39,194,255,.08)}
+.hero h1{font-size:62px;font-weight:900;line-height:1.05;margin-bottom:18px}
+.hero p{max-width:900px;margin:0 auto 18px;font-size:22px;color:#d8e2ee}
+.hero .sub{font-size:18px;color:#91a8c6;max-width:880px;margin-bottom:34px}
+
+.cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{padding:14px 24px;border-radius:10px;text-decoration:none;font-weight:800;font-size:15px;transition:.2s;display:inline-block}
+.btn-primary{background:#27c2ff;color:#03131f}
+.btn-primary:hover{transform:translateY(-2px);background:#55d1ff}
+.btn-secondary{border:1px solid rgba(255,255,255,.14);color:#fff;background:rgba(255,255,255,.03)}
+.btn-secondary:hover{transform:translateY(-2px);background:rgba(255,255,255,.07)}
+
+section{padding:78px 0}
+.section-title{font-size:38px;text-align:center;margin-bottom:14px}
+.section-sub{text-align:center;max-width:860px;margin:0 auto 44px;color:#9db0c7;font-size:18px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{background:#0b1320;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:26px;transition:.2s}
+.card:hover{transform:translateY(-4px);border-color:rgba(39,194,255,.35)}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{color:#9db0c7;font-size:15px}
+
+.highlight{background:linear-gradient(135deg,#07111d,#111d2d);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+
+.evidence-card{background:linear-gradient(135deg,#07111d,#0b1320);border:1px solid rgba(39,194,255,.22);border-radius:24px;padding:28px;box-shadow:0 24px 80px rgba(0,0,0,.34);margin-bottom:28px}
+.evidence-card img{width:100%;display:block;border-radius:18px;border:1px solid rgba(255,255,255,.08);margin-bottom:22px}
+.evidence-card h3{font-size:30px;margin-bottom:10px}
+.evidence-card p{font-size:17px;color:#b8c8dc;margin-bottom:10px}
+
+.note{margin-top:18px;padding:16px;border-radius:14px;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.08);font-size:14px;color:#9db0c7}
+
+.status-card{background:#0b1320;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:24px}
+.status-card strong{display:inline-block;margin-bottom:8px;color:#27c2ff;font-size:13px;text-transform:uppercase;letter-spacing:.06em}
+.status-card h3{font-size:20px;margin-bottom:10px}
+.status-card p{color:#9db0c7;font-size:15px}
+.status-card .tag{display:inline-block;margin-top:14px;padding:6px 10px;border-radius:999px;background:rgba(241,195,90,.10);border:1px solid rgba(241,195,90,.22);color:#f1c35a;font-size:12px}
+
+.band{background:linear-gradient(90deg,#0b1320,#101c2d);border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.band-inner{padding:56px 0;text-align:center}
+.band-inner h2{font-size:36px;margin-bottom:12px}
+.band-inner p{font-size:18px;color:#9db0c7;margin-bottom:26px}
+
+footer{padding:34px 0;text-align:center;color:#7f90a8;font-size:14px;border-top:1px solid rgba(255,255,255,.05)}
+
+@media(max-width:980px){.hero h1{font-size:50px}}
+@media(max-width:640px){
+.nav{flex-direction:column;gap:14px}
+.nav-links{justify-content:center}
+.hero{padding:70px 0 56px}
+.hero h1{font-size:38px}
+.hero p{font-size:20px}
+.hero .sub{font-size:16px}
+.section-title{font-size:30px}
+.evidence-card h3{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="container nav">
+<a href="./" class="logo">
+<img src="jorge_logo.png" alt="JORGE Engine">
+<span>JORGE Engine</span>
+</a>
+
+<div class="nav-links">
+<a href="./">Plataforma</a>
+<a href="med.html">Med</a>
+<a href="lidar.html">LiDAR</a>
+<a href="ind.html">Industrial</a>
+<a href="geologia.html">Geologia</a>
+<a href="infra.html">Infra</a>
+<a href="#contato">Contato</a>
+</div>
+</div>
+</header>
+
+<section class="hero">
+<div class="container">
+<div class="badge">Evidências Técnicas • Validação estrutural</div>
+
+<h1>Não é só visualização.<br>É estrutura mensurável.</h1>
+
+<p>
+O JORGE Engine foi submetido a experimentos comparativos para avaliar conectividade, organização morfológica e separação entre estrutura, densidade e ruído.
+</p>
+
+<p class="sub">
+Resultados preliminares indicam que o score estrutural captura propriedades relevantes do espaço, indo além de simples seleção por densidade.
+</p>
+
+<div class="cta">
+<a class="btn btn-primary" href="#evidencias">Ver evidências</a>
+<a class="btn btn-secondary" href="https://wa.me/5511986292842?text=Olá,%20quero%20entender%20as%20evidências%20técnicas%20do%20JORGE%20Engine." target="_blank">Conversar</a>
+</div>
+</div>
+</section>
+
+<section id="resumo">
+<div class="container">
+
+<h2 class="section-title">O que está sendo validado</h2>
+
+<p class="section-sub">
+A pergunta central: o JORGE apenas seleciona pontos densos ou realmente identifica organização estrutural?
+</p>
+
+<div class="grid">
+<div class="card">
+<h3>Estrutura vs densidade</h3>
+<p>Compara a seleção estrutural do JORGE contra seleção baseada apenas em densidade local.</p>
+</div>
+
+<div class="card">
+<h3>Estrutura vs aleatório</h3>
+<p>Verifica se os padrões encontrados diferem de amostragem aleatória.</p>
+</div>
+
+<div class="card">
+<h3>Morfologia interna</h3>
+<p>Avalia como o score estrutural se relaciona com regiões vazias, paredes, filamentos e nós.</p>
+</div>
+
+<div class="card">
+<h3>Conectividade</h3>
+<p>Observa fragmentação, componentes conectados e coerência global do conjunto.</p>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="highlight" id="evidencias">
+<div class="container">
+
+<h2 class="section-title">Evidências principais</h2>
+
+<p class="section-sub">
+Gráficos tratados para leitura executiva: conclusão primeiro, detalhe técnico depois.
+</p>
+
+<div class="evidence-card">
+<img src="morphology-score-progression.png" alt="Evolução morfológica pelo score estrutural no JORGE Engine">
+<h3>Do vazio ao nó estrutural</h3>
+<p>
+À medida que o score estrutural aumenta, o JORGE concentra regiões nodais e reduz progressivamente regiões vazias.
+</p>
+<p>
+Isso sugere que o observável não está apenas ordenando pontos por quantidade, mas destacando regiões com maior relevância estrutural.
+</p>
+<div class="note">
+Leitura executiva: o score estrutural reorganiza o espaço e destaca o que tem maior conectividade e relevância.
+</div>
+</div>
+
+<div class="evidence-card">
+<img src="ev_conectividade_fragmentacao.png" alt="Comparação de fragmentação estrutural entre JORGE, densidade e aleatório">
+<h3>Menos fragmentos, mais estrutura</h3>
+<p>
+Na comparação por número médio de componentes conectados, o JORGE preserva uma estrutura mais coesa do que a seleção por densidade.
+</p>
+<p>
+Para uso prático, isso significa menor fragmentação da leitura estrutural e maior continuidade do conjunto analisado.
+</p>
+<div class="note">
+Leitura executiva: selecionar por densidade não é o mesmo que preservar estrutura.
+</div>
+</div>
+
+</div>
+</section>
+
+<section id="experimentos">
+<div class="container">
+
+<h2 class="section-title">Outros experimentos em validação</h2>
+
+<p class="section-sub">
+Os resultados abaixo entram como base técnica da plataforma. Os gráficos tratados serão adicionados conforme forem preparados para leitura pública.
+</p>
+
+<div class="grid">
+
+<div class="status-card">
+<strong>Comparativo estrutural</strong>
+<h3>JORGE vs densidade vs aleatório</h3>
+<p>
+Avalia se a seleção estrutural preserva organização espacial além do que seria obtido por densidade simples ou amostragem aleatória.
+</p>
+<span class="tag">gráfico em preparação</span>
+</div>
+
+<div class="status-card">
+<strong>Espectro Laplaciano</strong>
+<h3>Assinatura topológica</h3>
+<p>
+Analisa autovalores pequenos do grafo para observar diferenças de conectividade e coerência entre métodos.
+</p>
+<span class="tag">gráfico em preparação</span>
+</div>
+
+<div class="status-card">
+<strong>Percolação</strong>
+<h3>Robustez da conectividade</h3>
+<p>
+Observa como os componentes conectados, grau médio, clustering e lambda2 variam conforme o grafo muda.
+</p>
+<span class="tag">gráfico em preparação</span>
+</div>
+
+<div class="status-card">
+<strong>Morfologia estrutural</strong>
+<h3>Enriquecimento no topo do score</h3>
+<p>
+Verifica quais classes morfológicas aparecem com maior frequência nos percentis mais altos de g_mag.
+</p>
+<span class="tag">próximo gráfico recomendado</span>
+</div>
+
+<div class="status-card">
+<strong>Teste contra ruído</strong>
+<h3>Null test / shuffled data</h3>
+<p>
+Valida se o método responde à organização estrutural real e não apenas à presença de pontos ou flutuação aleatória.
+</p>
+<span class="tag">resultado técnico disponível</span>
+</div>
+
+<div class="status-card">
+<strong>Multi-domínio</strong>
+<h3>LiDAR, médico, industrial e ciência</h3>
+<p>
+Testa a mesma lógica estrutural em datasets de naturezas diferentes, preservando a leitura determinística.
+</p>
+<span class="tag">em expansão</span>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section class="band" id="contato">
+<div class="container band-inner">
+
+<h2>Quer validar com seu dataset?</h2>
+
+<p>
+A próxima etapa é aplicar a leitura estrutural em dados reais de empresas, laboratórios e equipes técnicas.
+</p>
+
+<div class="cta">
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20validar%20o%20JORGE%20Engine%20com%20um%20dataset%20real." target="_blank">Propor validação</a>
+<a class="btn btn-secondary" href="./">Voltar para plataforma</a>
+</div>
+
+</div>
+</section>
+
+<footer>
+<div class="container">
+JORGE Engine © 2026 • Evidências Técnicas • Resultados experimentais preliminares
+</div>
+</footer>
+
+</body>
+</html>
