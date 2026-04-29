@@ -14,27 +14,20 @@ gtag('config', 'G-71YETQYR21');
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>JORGE Engine — Plataforma de Inteligência Estrutural</title>
+<title>JORGE Med — Inteligência Estrutural em Imagem Médica</title>
 
 <link rel="icon" type="image/x-icon" href="jorge_icon.ico">
 
-<meta name="description" content="JORGE Engine transforma grandes volumes de dados em leitura estrutural clara. Aplicações em medicina, LiDAR, indústria, geologia e infraestrutura.">
+<meta name="description" content="JORGE Med aplica inteligência estrutural determinística a volumes médicos, com foco em conectividade, regiões de interesse e comparação temporal.">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
-
-html{
-scroll-behavior:smooth;
-}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
 
 body{
 font-family:Arial, Helvetica, sans-serif;
 background:#05070b;
-color:#ffffff;
+color:#fff;
 line-height:1.5;
 }
 
@@ -50,7 +43,7 @@ header{
 position:sticky;
 top:0;
 z-index:100;
-background:rgba(5,7,11,.90);
+background:rgba(5,7,11,.92);
 backdrop-filter:blur(10px);
 border-bottom:1px solid rgba(255,255,255,.06);
 }
@@ -60,22 +53,17 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 0;
+gap:16px;
 }
 
 .logo{
 display:flex;
 align-items:center;
 gap:12px;
+text-decoration:none;
+color:#fff;
 font-size:24px;
 font-weight:800;
-text-decoration:none;
-color:#ffffff;
-transition:.2s;
-}
-
-.logo:hover{
-opacity:.92;
-transform:translateY(-1px);
 }
 
 .logo img{
@@ -98,16 +86,15 @@ font-size:14px;
 transition:.2s;
 }
 
-.nav-links a:hover{
-color:#ffffff;
-}
+.nav-links a:hover{color:#fff}
 
 /* HERO */
 .hero{
-padding:95px 0 72px;
+padding:96px 0 76px;
 text-align:center;
 background:
-radial-gradient(circle at top, rgba(39,194,255,.18), transparent 42%),
+radial-gradient(circle at top, rgba(193,18,31,.20), transparent 38%),
+radial-gradient(circle at 75% 18%, rgba(39,194,255,.10), transparent 34%),
 linear-gradient(180deg,#05070b 0%,#07111d 100%);
 }
 
@@ -117,29 +104,29 @@ padding:8px 14px;
 border:1px solid rgba(255,255,255,.10);
 border-radius:999px;
 font-size:13px;
-color:#a9c5e8;
+color:#ffc8cf;
 margin-bottom:24px;
-background:rgba(255,255,255,.03);
+background:rgba(193,18,31,.08);
 }
 
 .hero h1{
-font-size:64px;
+font-size:62px;
 font-weight:900;
 line-height:1.05;
 margin-bottom:18px;
 }
 
 .hero p{
-max-width:920px;
+max-width:940px;
 margin:0 auto 18px;
-font-size:24px;
+font-size:23px;
 color:#d8e2ee;
 }
 
 .hero .sub{
 font-size:18px;
 color:#91a8c6;
-max-width:860px;
+max-width:900px;
 margin-bottom:34px;
 }
 
@@ -162,18 +149,18 @@ display:inline-block;
 }
 
 .btn-primary{
-background:#27c2ff;
-color:#03131f;
+background:#ff4d5d;
+color:#fff;
 }
 
 .btn-primary:hover{
 transform:translateY(-2px);
-background:#55d1ff;
+background:#ff6674;
 }
 
 .btn-secondary{
 border:1px solid rgba(255,255,255,.14);
-color:#ffffff;
+color:#fff;
 background:rgba(255,255,255,.03);
 }
 
@@ -198,7 +185,7 @@ border:1px solid rgba(255,255,255,.06);
 
 .metric strong{
 display:block;
-font-size:24px;
+font-size:23px;
 margin-bottom:6px;
 }
 
@@ -207,10 +194,8 @@ font-size:14px;
 color:#8fa4c0;
 }
 
-/* Sections */
-section{
-padding:78px 0;
-}
+/* GENERAL */
+section{padding:78px 0}
 
 .section-title{
 font-size:38px;
@@ -220,7 +205,7 @@ margin-bottom:14px;
 
 .section-sub{
 text-align:center;
-max-width:820px;
+max-width:860px;
 margin:0 auto 44px;
 color:#9db0c7;
 font-size:18px;
@@ -228,28 +213,25 @@ font-size:18px;
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:18px;
 }
 
 .card{
-display:block;
-text-decoration:none;
 background:#0b1320;
 border:1px solid rgba(255,255,255,.06);
 border-radius:16px;
 padding:26px;
 transition:.2s;
-color:#ffffff;
 }
 
 .card:hover{
-transform:translateY(-5px);
-border-color:rgba(39,194,255,.35);
+transform:translateY(-4px);
+border-color:rgba(255,77,93,.35);
 }
 
 .card h3{
-font-size:22px;
+font-size:20px;
 margin-bottom:10px;
 }
 
@@ -258,15 +240,82 @@ color:#9db0c7;
 font-size:15px;
 }
 
-.card small{
-display:inline-block;
-margin-top:14px;
-color:#27c2ff;
-font-weight:700;
+.highlight{
+background:linear-gradient(135deg,#12070b,#111d2d);
+border-top:1px solid rgba(255,255,255,.05);
+border-bottom:1px solid rgba(255,255,255,.05);
+}
+
+.case-box{
+max-width:980px;
+margin:auto;
+background:#0b1320;
+border:1px solid rgba(255,77,93,.24);
+border-radius:24px;
+padding:34px;
+box-shadow:0 24px 80px rgba(0,0,0,.38);
+}
+
+.case-box h2{
+font-size:36px;
+margin-bottom:14px;
+}
+
+.case-box p{
+font-size:18px;
+color:#b6c6dc;
+margin-bottom:16px;
+}
+
+.statement{
+font-size:28px;
+font-weight:900;
+line-height:1.18;
+color:#fff;
+margin:24px 0;
+padding:24px;
+border-left:4px solid #ff4d5d;
+background:rgba(255,77,93,.06);
+border-radius:14px;
+}
+
+.disclaimer{
+margin-top:24px;
+padding:18px;
+border-radius:14px;
+background:rgba(255,255,255,.035);
+border:1px solid rgba(255,255,255,.08);
+font-size:14px;
+color:#a8bad4;
+}
+
+.steps{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:16px;
+margin-top:24px;
+}
+
+.step{
+background:#07111d;
+border:1px solid rgba(255,255,255,.06);
+border-radius:14px;
+padding:18px;
+}
+
+.step strong{
+display:block;
+color:#ff6b78;
+margin-bottom:8px;
+}
+
+.step span{
+font-size:14px;
+color:#9db0c7;
 }
 
 .band{
-background:linear-gradient(90deg,#0b1320,#101c2d);
+background:linear-gradient(90deg,#0b1320,#19101a);
 border-top:1px solid rgba(255,255,255,.05);
 border-bottom:1px solid rgba(255,255,255,.05);
 }
@@ -295,10 +344,11 @@ font-size:14px;
 border-top:1px solid rgba(255,255,255,.05);
 }
 
-/* Mobile */
+/* MOBILE */
 @media(max-width:980px){
-.hero h1{font-size:52px}
+.hero h1{font-size:50px}
 .metrics{grid-template-columns:repeat(2,1fr)}
+.steps{grid-template-columns:1fr}
 }
 
 @media(max-width:640px){
@@ -317,7 +367,7 @@ padding:70px 0 56px;
 }
 
 .hero h1{
-font-size:40px;
+font-size:38px;
 }
 
 .hero p{
@@ -336,6 +386,14 @@ grid-template-columns:1fr;
 font-size:30px;
 }
 
+.statement{
+font-size:22px;
+}
+
+.case-box{
+padding:24px;
+}
+
 }
 </style>
 </head>
@@ -345,17 +403,17 @@ font-size:30px;
 <header>
 <div class="container nav">
 
-<a href="./" class="logo">
-<img src="jorge_logo.png" alt="JORGE Engine Logo">
-<span>JORGE Engine</span>
+<a href="index.html" class="logo">
+<img src="jorge_logo.png" alt="JORGE Engine">
+<span>JORGE Med</span>
 </a>
 
 <div class="nav-links">
-<a href="#sobre">Sobre</a>
-<a href="#verticais">Verticais</a>
-<a href="#tecnologia">Tecnologia</a>
+<a href="index.html">Plataforma</a>
+<a href="#conceito">Conceito</a>
+<a href="#determinismo">Determinismo</a>
+<a href="#pesquisa">Pesquisa</a>
 <a href="#contato">Contato</a>
-<a href="https://github.com/gabrielhenriquegazola/Jorge-Engine" target="_blank">GitHub</a>
 </div>
 
 </div>
@@ -364,78 +422,45 @@ font-size:30px;
 <section class="hero">
 <div class="container">
 
-<div class="badge">JORGE Engine • Plataforma de Inteligência Estrutural</div>
+<div class="badge">JORGE Med • Inteligência estrutural aplicada à imagem médica</div>
 
-<h1>Volume mostra quantidade.<br>Estrutura revela o que importa.</h1>
+<h1>Volume não é estrutura.</h1>
 
 <p>
-Transforme grandes volumes de dados em leitura estrutural clara, navegável e útil para decisão técnica.
+Milhões de voxels podem existir em um exame.  
+Mas conectividade, organização espacial e mudança estrutural contam outra história.
 </p>
 
 <p class="sub">
-Aplicado a medicina, LiDAR, indústria, geologia e infraestrutura. Processamento local, visualização própria e tecnologia brasileira.
+JORGE Med aplica processamento determinístico e leitura estrutural a volumes médicos para apoiar pesquisa, comparação temporal e exploração técnica responsável.
 </p>
 
 <div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20vim%20pelo%20site%20JORGE%20Engine." target="_blank">Falar no WhatsApp</a>
-<a class="btn btn-secondary" href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">LinkedIn</a>
-<a class="btn btn-secondary" href="https://github.com/gabrielhenriquegazola/Jorge-Engine" target="_blank">GitHub</a>
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20conhecer%20o%20JORGE%20Med." target="_blank">Conversar sobre JORGE Med</a>
+<a class="btn btn-secondary" href="#pesquisa">Parcerias</a>
+<a class="btn btn-secondary" href="index.html">Ver plataforma</a>
 </div>
 
 <div class="metrics">
+
 <div class="metric">
-<strong>132M+</strong>
-<span>pontos processados</span>
+<strong>T0 → T1</strong>
+<span>comparação temporal</span>
+</div>
+
+<div class="metric">
+<strong>NIfTI / DICOM</strong>
+<span>compatibilidade em estudo</span>
+</div>
+
+<div class="metric">
+<strong>Auditável</strong>
+<span>pipeline rastreável</span>
 </div>
 
 <div class="metric">
 <strong>Local</strong>
-<span>execução desktop</span>
-</div>
-
-<div class="metric">
-<strong>5+</strong>
-<span>verticais estratégicas</span>
-</div>
-
-<div class="metric">
-<strong>Viewer</strong>
-<span>visualização própria</span>
-</div>
-</div>
-
-</div>
-</section>
-
-<section id="sobre">
-<div class="container">
-
-<h2 class="section-title">O que é o JORGE</h2>
-
-<p class="section-sub">
-Uma plataforma criada para revelar estrutura em ambientes complexos, onde apenas volume de dados já não basta.
-</p>
-
-<div class="grid">
-
-<div class="card">
-<h3>Mais que visualização</h3>
-<p>Destaca relevância, conectividade e organização interna.</p>
-</div>
-
-<div class="card">
-<h3>Determinístico</h3>
-<p>Mesmo dataset, mesma lógica, mesma consistência.</p>
-</div>
-
-<div class="card">
-<h3>Escalável</h3>
-<p>Preparado para grandes massas de dados.</p>
-</div>
-
-<div class="card">
-<h3>Multi-Domínio</h3>
-<p>Aplicável a múltiplos setores e formatos.</p>
+<span>processamento controlado</span>
 </div>
 
 </div>
@@ -443,81 +468,115 @@ Uma plataforma criada para revelar estrutura em ambientes complexos, onde apenas
 </div>
 </section>
 
-<section id="verticais">
+<section id="conceito">
 <div class="container">
 
-<h2 class="section-title">Verticais Estratégicas</h2>
+<h2 class="section-title">O que o JORGE Med propõe</h2>
 
 <p class="section-sub">
-Soluções especializadas construídas sobre a mesma base tecnológica.
+Não substituir diagnóstico. E sim oferecer uma nova camada de leitura estrutural para volumes complexos.
 </p>
 
 <div class="grid">
 
-<a class="card" href="med.html">
-<h3>JORGE Med</h3>
-<p>Imagem médica, conectividade tumoral e comparação temporal.</p>
-<small>Explorar setor →</small>
-</a>
+<div class="card">
+<h3>Regiões relevantes</h3>
+<p>Destaca áreas estruturalmente importantes para inspeção técnica e pesquisa.</p>
+</div>
 
-<a class="card" href="lidar.html">
-<h3>JORGE LiDAR</h3>
-<p>Nuvens massivas, cidades, terreno e infraestrutura.</p>
-<small>Explorar setor →</small>
-</a>
+<div class="card">
+<h3>Conectividade</h3>
+<p>Observa continuidade, fragmentação e backbone estrutural.</p>
+</div>
 
-<a class="card" href="ind.html">
-<h3>JORGE Industrial</h3>
-<p>Estrutura antes da falha e manutenção preditiva.</p>
-<small>Explorar setor →</small>
-</a>
+<div class="card">
+<h3>Comparação temporal</h3>
+<p>Analisa como a estrutura mudou entre exames.</p>
+</div>
 
-<a class="card" href="geologia.html">
-<h3>JORGE Geologia</h3>
-<p>Taludes, mineração, geotecnia e risco espacial.</p>
-<small>Explorar setor →</small>
-</a>
-
-<a class="card" href="infra.html">
-<h3>JORGE Infra</h3>
-<p>Telecom, logística, energia e cidades inteligentes.</p>
-<small>Explorar setor →</small>
-</a>
+<div class="card">
+<h3>Visualização 3D/4D</h3>
+<p>Navegação volumétrica para interpretação espacial.</p>
+</div>
 
 </div>
 
 </div>
 </section>
 
-<section id="tecnologia">
+<section class="highlight" id="determinismo">
 <div class="container">
 
-<h2 class="section-title">Base Tecnológica</h2>
+<div class="case-box">
 
-<p class="section-sub">
-Desenvolvido para performance, clareza operacional e expansão contínua.
+<h2>Determinismo importa em saúde</h2>
+
+<p>
+Em ambientes críticos, confiança técnica exige consistência.
+</p>
+
+<div class="statement">
+Mesma entrada.  
+Mesmo processo.  
+Mesma lógica de saída.
+</div>
+
+<p>
+JORGE Med prioriza processamento reproduzível, auditoria de fluxo e leitura explicável.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Viewer Proprietário</h3>
-<p>Navegação interativa e leitura em escala.</p>
+<h3>Pipeline auditável</h3>
+<p>Etapas claras e rastreáveis.</p>
 </div>
 
 <div class="card">
-<h3>Pipeline Auditável</h3>
-<p>Fluxo técnico consistente e reproduzível.</p>
+<h3>Reprodutibilidade</h3>
+<p>Resultados consistentes sob mesmas condições.</p>
 </div>
 
 <div class="card">
-<h3>Execução Local</h3>
-<p>Controle de dados sensíveis no ambiente do cliente.</p>
+<h3>Camada complementar</h3>
+<p>Suporte à pesquisa e interpretação, não substituição clínica.</p>
 </div>
 
-<div class="card">
-<h3>Tecnologia Brasileira</h3>
-<p>Desenvolvimento independente com visão global.</p>
+</div>
+
+<div class="disclaimer">
+Ferramenta experimental para pesquisa e exploração técnica. Não é dispositivo médico certificado e não substitui diagnóstico, laudo ou decisão clínica.
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="pesquisa">
+<div class="container">
+
+<h2 class="section-title">Parcerias e validação</h2>
+
+<p class="section-sub">
+O caminho responsável é validar junto de especialistas, datasets controlados e objetivos claros.
+</p>
+
+<div class="steps">
+
+<div class="step">
+<strong>1. Caso de estudo</strong>
+<span>Glioma, T0/T1, base retrospectiva ou comparação específica.</span>
+</div>
+
+<div class="step">
+<strong>2. Processamento</strong>
+<span>Leitura estrutural + visualização + métricas.</span>
+</div>
+
+<div class="step">
+<strong>3. Avaliação</strong>
+<span>Especialistas verificam utilidade real do sinal gerado.</span>
 </div>
 
 </div>
@@ -528,15 +587,16 @@ Desenvolvido para performance, clareza operacional e expansão contínua.
 <section class="band" id="contato">
 <div class="container band-inner">
 
-<h2>Buscando pilotos e parcerias estratégicas</h2>
+<h2>Buscando parcerias médicas e científicas</h2>
 
 <p>
-Se sua empresa trabalha com dados complexos, grandes volumes ou ambientes críticos, vamos conversar.
+Radiologistas, pesquisadores, universidades e laboratórios interessados em validação séria são bem-vindos.
 </p>
 
 <div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20conhecer%20o%20JORGE%20Engine." target="_blank">Entrar em contato</a>
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20falar%20sobre%20JORGE%20Med." target="_blank">Entrar em contato</a>
 <a class="btn btn-secondary" href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">LinkedIn</a>
+<a class="btn btn-secondary" href="index.html">Voltar</a>
 </div>
 
 </div>
@@ -544,7 +604,7 @@ Se sua empresa trabalha com dados complexos, grandes volumes ou ambientes críti
 
 <footer>
 <div class="container">
-JORGE Engine © 2026 • Plataforma de Inteligência Estrutural
+JORGE Med © 2026 • Inteligência Estrutural em Imagem Médica • Uso experimental
 </div>
 </footer>
 
