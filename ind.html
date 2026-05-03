@@ -14,11 +14,11 @@ gtag('config', 'G-71YETQYR21');
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>JORGE Industrial — Leitura Estrutural para Inspeção e Falhas</title>
+<title>JORGE Industrial — Inspeção, LiDAR de Plantas e As-built x As-is</title>
 
 <link rel="icon" type="image/x-icon" href="jorge_icon.ico">
 
-<meta name="description" content="JORGE Industrial aplica leitura estrutural a scans industriais, inspeção técnica e manutenção preditiva. Detecte mudanças estruturais antes da falha visível.">
+<meta name="description" content="JORGE Industrial aplica inteligência estrutural a scans industriais, LiDAR de plantas, comparação as-built x as-is e triagem de regiões críticas para inspeção e manutenção.">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
@@ -27,7 +27,7 @@ body{
 font-family:Arial, Helvetica, sans-serif;
 background:#05070b;
 color:#ffffff;
-line-height:1.5;
+line-height:1.55;
 }
 .container{
 width:100%;
@@ -35,7 +35,6 @@ max-width:1180px;
 margin:auto;
 padding:0 24px;
 }
-
 header{
 position:sticky;
 top:0;
@@ -44,53 +43,68 @@ background:rgba(5,7,11,.92);
 backdrop-filter:blur(10px);
 border-bottom:1px solid rgba(255,255,255,.06);
 }
-
 .nav{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 0;
+gap:20px;
 }
-
 .logo{
 display:flex;
 align-items:center;
 gap:12px;
 font-size:24px;
 font-weight:800;
+text-decoration:none;
+color:#fff;
 }
-
 .logo img{
 height:38px;
 width:auto;
 display:block;
 }
-
 .nav-links{
 display:flex;
 gap:18px;
 align-items:center;
+flex-wrap:wrap;
 }
-
 .nav-links a{
 color:#dbe5f0;
 text-decoration:none;
 font-size:14px;
 }
-
-.nav-links a:hover{
-color:#ffffff;
-}
+.nav-links a:hover{color:#ffffff}
 
 .hero{
+position:relative;
+overflow:hidden;
 padding:96px 0 76px;
-text-align:center;
 background:
-radial-gradient(circle at top, rgba(241,195,90,.18), transparent 38%),
-radial-gradient(circle at 72% 20%, rgba(255,120,0,.10), transparent 34%),
-linear-gradient(180deg,#05070b 0%,#07111d 100%);
+radial-gradient(circle at 12% 12%, rgba(241,195,90,.22), transparent 30%),
+radial-gradient(circle at 80% 20%, rgba(255,120,0,.12), transparent 28%),
+linear-gradient(180deg,#05070b 0%,#07111d 55%,#05070b 100%);
 }
-
+.hero:before{
+content:"";
+position:absolute;
+inset:0;
+background:
+linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+background-size:42px 42px;
+mask-image:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.03));
+pointer-events:none;
+}
+.hero-inner{
+position:relative;
+z-index:1;
+display:grid;
+grid-template-columns:1.08fr .92fr;
+gap:34px;
+align-items:center;
+}
 .badge{
 display:inline-block;
 padding:8px 14px;
@@ -101,87 +115,125 @@ color:#ffe0a6;
 margin-bottom:24px;
 background:rgba(241,195,90,.08);
 }
-
 .hero h1{
-font-size:62px;
+font-size:60px;
 font-weight:900;
-line-height:1.05;
+line-height:1.04;
+letter-spacing:-1.2px;
 margin-bottom:18px;
 }
-
 .hero p{
-max-width:940px;
-margin:0 auto 18px;
-font-size:23px;
+max-width:900px;
+font-size:22px;
 color:#d8e2ee;
+margin-bottom:16px;
 }
-
 .hero .sub{
 font-size:18px;
 color:#91a8c6;
-max-width:880px;
-margin-bottom:34px;
+max-width:850px;
+margin-bottom:30px;
 }
-
 .cta{
 display:flex;
-justify-content:center;
 gap:14px;
 flex-wrap:wrap;
-margin-bottom:34px;
+margin-bottom:28px;
 }
-
 .btn{
 padding:14px 24px;
-border-radius:10px;
+border-radius:11px;
 text-decoration:none;
 font-weight:800;
 font-size:15px;
 transition:.2s;
 display:inline-block;
 }
-
 .btn-primary{
 background:#f1c35a;
 color:#1c1400;
 }
-
 .btn-primary:hover{
 transform:translateY(-2px);
 background:#ffd37a;
 }
-
 .btn-secondary{
 border:1px solid rgba(255,255,255,.14);
 color:#ffffff;
 background:rgba(255,255,255,.03);
 }
-
 .btn-secondary:hover{
 transform:translateY(-2px);
 background:rgba(255,255,255,.07);
+}
+.hero-note{
+font-size:14px;
+color:#8fa4c0;
+}
+.hero-panel{
+background:linear-gradient(180deg, rgba(11,19,32,.94), rgba(8,13,24,.94));
+border:1px solid rgba(241,195,90,.16);
+border-radius:22px;
+padding:22px;
+box-shadow:0 30px 70px rgba(0,0,0,.36);
+}
+.panel-title{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:12px;
+margin-bottom:16px;
+}
+.panel-title strong{
+font-size:16px;
+}
+.panel-title span{
+font-size:12px;
+padding:6px 10px;
+border-radius:999px;
+background:rgba(241,195,90,.10);
+border:1px solid rgba(241,195,90,.25);
+color:#ffe0a6;
+}
+.panel-list{
+display:grid;
+gap:10px;
+}
+.panel-item{
+background:rgba(255,255,255,.035);
+border:1px solid rgba(255,255,255,.06);
+border-radius:14px;
+padding:14px;
+}
+.panel-item strong{
+display:block;
+font-size:15px;
+margin-bottom:4px;
+}
+.panel-item span{
+font-size:13px;
+color:#9db0c7;
 }
 
 .metrics{
 display:grid;
 grid-template-columns:repeat(4,1fr);
 gap:14px;
-margin-top:18px;
+margin-top:28px;
+position:relative;
+z-index:1;
 }
-
 .metric{
 padding:18px;
 border-radius:14px;
 background:#0b1320;
 border:1px solid rgba(255,255,255,.06);
 }
-
 .metric strong{
 display:block;
 font-size:23px;
 margin-bottom:6px;
 }
-
 .metric span{
 font-size:14px;
 color:#8fa4c0;
@@ -190,13 +242,11 @@ color:#8fa4c0;
 section{
 padding:78px 0;
 }
-
 .section-title{
 font-size:38px;
 text-align:center;
 margin-bottom:14px;
 }
-
 .section-sub{
 text-align:center;
 max-width:850px;
@@ -204,13 +254,11 @@ margin:0 auto 44px;
 color:#9db0c7;
 font-size:18px;
 }
-
 .grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 gap:18px;
 }
-
 .card{
 background:#0b1320;
 border:1px solid rgba(255,255,255,.06);
@@ -218,17 +266,14 @@ border-radius:16px;
 padding:26px;
 transition:.2s;
 }
-
 .card:hover{
 transform:translateY(-4px);
 border-color:rgba(241,195,90,.35);
 }
-
 .card h3{
 font-size:20px;
 margin-bottom:10px;
 }
-
 .card p{
 color:#9db0c7;
 font-size:15px;
@@ -239,9 +284,8 @@ background:linear-gradient(135deg,#101014,#1c1507);
 border-top:1px solid rgba(255,255,255,.05);
 border-bottom:1px solid rgba(255,255,255,.05);
 }
-
 .case-box{
-max-width:960px;
+max-width:980px;
 margin:auto;
 background:#0b1320;
 border:1px solid rgba(241,195,90,.24);
@@ -249,22 +293,19 @@ border-radius:24px;
 padding:34px;
 box-shadow:0 24px 80px rgba(0,0,0,.38);
 }
-
 .case-box h2{
 font-size:36px;
 margin-bottom:14px;
 }
-
 .case-box p{
 color:#b6c6dc;
 font-size:18px;
 margin-bottom:16px;
 }
-
 .statement{
-font-size:30px;
+font-size:28px;
 font-weight:900;
-line-height:1.18;
+line-height:1.2;
 color:#ffffff;
 margin:24px 0;
 padding:24px;
@@ -279,45 +320,99 @@ grid-template-columns:repeat(3,1fr);
 gap:16px;
 margin-top:24px;
 }
-
 .step{
 background:#07111d;
 border:1px solid rgba(255,255,255,.06);
 border-radius:14px;
 padding:18px;
 }
-
 .step strong{
 display:block;
 color:#f1c35a;
 margin-bottom:8px;
 }
-
 .step span{
 color:#9db0c7;
 font-size:14px;
 }
 
+.integration{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:22px;
+align-items:start;
+}
+.integration-box{
+background:#0b1320;
+border:1px solid rgba(255,255,255,.06);
+border-radius:18px;
+padding:26px;
+}
+.integration-box h3{
+font-size:24px;
+margin-bottom:12px;
+}
+.integration-box p{
+color:#9db0c7;
+font-size:16px;
+margin-bottom:12px;
+}
+.integration-box ul{
+margin-left:18px;
+color:#9db0c7;
+font-size:15px;
+}
+.integration-box li{
+margin-bottom:8px;
+}
+
 .band{
-background:linear-gradient(90deg,#0b1320,#1a160d);
+background:
+radial-gradient(circle at 20% 20%, rgba(241,195,90,.14), transparent 25%),
+linear-gradient(90deg,#0b1320,#1a160d);
 border-top:1px solid rgba(255,255,255,.05);
 border-bottom:1px solid rgba(255,255,255,.05);
 }
-
 .band-inner{
-padding:56px 0;
+padding:60px 0;
 text-align:center;
 }
-
 .band-inner h2{
-font-size:36px;
+font-size:38px;
 margin-bottom:12px;
 }
-
 .band-inner p{
 color:#9db0c7;
 font-size:18px;
-margin-bottom:26px;
+max-width:850px;
+margin:0 auto 26px;
+}
+
+.contact-cards{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:18px;
+margin-top:28px;
+}
+.contact-card{
+background:rgba(255,255,255,.04);
+border:1px solid rgba(255,255,255,.08);
+border-radius:16px;
+padding:20px;
+}
+.contact-card h3{
+font-size:18px;
+margin-bottom:8px;
+}
+.contact-card p{
+color:#9db0c7;
+font-size:14px;
+margin-bottom:8px;
+}
+.contact-card a{
+color:#ffe0a6;
+font-weight:800;
+text-decoration:none;
 }
 
 footer{
@@ -329,11 +424,15 @@ border-top:1px solid rgba(255,255,255,.05);
 }
 
 @media(max-width:980px){
-.hero h1{font-size:50px}
+.hero-inner,
+.integration{
+grid-template-columns:1fr;
+}
+.hero h1{font-size:48px}
 .metrics{grid-template-columns:repeat(2,1fr)}
 .steps{grid-template-columns:1fr}
+.contact-cards{grid-template-columns:1fr}
 }
-
 @media(max-width:640px){
 .nav{flex-direction:column;gap:14px}
 .nav-links{flex-wrap:wrap;justify-content:center}
@@ -354,15 +453,16 @@ border-top:1px solid rgba(255,255,255,.05);
 <header>
 <div class="container nav">
 
-<div class="logo">
+<a class="logo" href="index.html">
 <img src="jorge_logo.png" alt="Logo JORGE Engine">
 <span>JORGE Industrial</span>
-</div>
+</a>
 
 <div class="nav-links">
 <a href="index.html">Plataforma</a>
-<a href="#falhas">Falhas</a>
+<a href="#dor">Dor operacional</a>
 <a href="#valor">Valor</a>
+<a href="#integracao">Integração</a>
 <a href="#piloto">Piloto</a>
 <a href="#contato">Contato</a>
 </div>
@@ -373,34 +473,73 @@ border-top:1px solid rgba(255,255,255,.05);
 <section class="hero">
 <div class="container">
 
-<div class="badge">JORGE Industrial • Estrutura antes da falha</div>
+<div class="hero-inner">
 
-<h1>Falhas raramente surgem do nada.<br>A estrutura muda antes.</h1>
+<div>
+<div class="badge">JORGE Industrial • Inspeção, LiDAR de plantas e as-built x as-is</div>
+
+<h1>Dados industriais não precisam ser só massa visual.</h1>
 
 <p>
-O JORGE Industrial aplica leitura estrutural a scans técnicos, inspeções e ativos físicos para detectar mudanças relevantes antes do problema se tornar evidente.
+O JORGE Industrial transforma scans, nuvens de pontos e dados 3D de ativos físicos em leitura estrutural para inspeção, manutenção e comparação operacional.
 </p>
 
 <p class="sub">
-Uma nova camada para manutenção preditiva, comparação periódica e leitura visual de ambientes industriais complexos.
+A proposta é apoiar a primeira leitura técnica: onde existe continuidade, onde há concentração estrutural, quais regiões merecem atenção e como reduzir a navegação manual em datasets grandes.
 </p>
 
 <div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20conhecer%20o%20JORGE%20Industrial." target="_blank">Falar sobre piloto industrial</a>
-<a class="btn btn-secondary" href="#piloto">Ver piloto técnico</a>
+<a class="btn btn-primary" href="mailto:contato@jorgeengine.com.br">Solicitar conversa técnica</a>
+<a class="btn btn-secondary" href="#piloto">Ver piloto industrial</a>
 <a class="btn btn-secondary" href="index.html">Ver plataforma</a>
+</div>
+
+<div class="hero-note">
+contato@jorgeengine.com.br • gabriel@jorgeengine.com.br
+</div>
+</div>
+
+<div class="hero-panel">
+<div class="panel-title">
+<strong>Leitura operacional</strong>
+<span>MVP demonstrável</span>
+</div>
+
+<div class="panel-list">
+<div class="panel-item">
+<strong>Inspeção industrial</strong>
+<span>Destaca regiões estruturais relevantes em scans técnicos e nuvens de pontos.</span>
+</div>
+
+<div class="panel-item">
+<strong>LiDAR de plantas</strong>
+<span>Ajuda a organizar ambientes densos com tubulações, estruturas, máquinas e contexto operacional.</span>
+</div>
+
+<div class="panel-item">
+<strong>As-built x as-is</strong>
+<span>Base para comparar realidade capturada e referência planejada, inicialmente por fluxo paralelo.</span>
+</div>
+
+<div class="panel-item">
+<strong>Manutenção</strong>
+<span>Triagem de regiões críticas antes de uma análise humana mais detalhada.</span>
+</div>
+</div>
+</div>
+
 </div>
 
 <div class="metrics">
 
 <div class="metric">
-<strong>E57 / PLY</strong>
-<span>scans industriais alvo</span>
+<strong>E57 / PLY / PCD</strong>
+<span>formatos industriais alvo</span>
 </div>
 
 <div class="metric">
-<strong>T0 → T1</strong>
-<span>comparação estrutural temporal</span>
+<strong>As-built x as-is</strong>
+<span>comparação operacional</span>
 </div>
 
 <div class="metric">
@@ -409,7 +548,7 @@ Uma nova camada para manutenção preditiva, comparação periódica e leitura v
 </div>
 
 <div class="metric">
-<strong>Viewer</strong>
+<strong>Viewer próprio</strong>
 <span>inspeção navegável</span>
 </div>
 
@@ -418,35 +557,35 @@ Uma nova camada para manutenção preditiva, comparação periódica e leitura v
 </div>
 </section>
 
-<section id="falhas">
+<section id="dor">
 <div class="container">
 
-<h2 class="section-title">Onde a dor aparece</h2>
+<h2 class="section-title">A dor não é abrir o arquivo. É interpretar.</h2>
 
 <p class="section-sub">
-Paradas inesperadas, corrosão, deformação e degradação costumam gerar custo alto. Detectar cedo muda o jogo.
+Scans industriais, LiDAR de plantas e nuvens de pontos podem ser enormes. O valor aparece quando a equipe consegue transformar esse volume em leitura operacional.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Parada não planejada</h3>
-<p>Horas ou dias de produção perdidos podem custar muito mais que inspeção preventiva.</p>
+<h3>Navegação manual demais</h3>
+<p>O operador precisa procurar visualmente regiões relevantes dentro de uma massa complexa de pontos.</p>
+</div>
+
+<div class="card">
+<h3>As-built x as-is difícil</h3>
+<p>A comparação entre projeto, captura real e estado atual costuma depender de processos pesados e leitura especializada.</p>
 </div>
 
 <div class="card">
 <h3>Inspeção tardia</h3>
-<p>Muitas vezes o problema só aparece quando já está visível demais.</p>
+<p>Regiões críticas podem ficar escondidas em contexto, ruído ou excesso de informação visual.</p>
 </div>
 
 <div class="card">
-<h3>Comparação difícil</h3>
-<p>Scans periódicos existem, mas comparar visualmente grandes volumes é trabalhoso.</p>
-</div>
-
-<div class="card">
-<h3>Ruído operacional</h3>
-<p>Ambientes industriais densos dificultam enxergar o que realmente mudou.</p>
+<h3>Dados subutilizados</h3>
+<p>O scan existe, mas nem sempre vira decisão rápida para manutenção, engenharia ou planejamento.</p>
 </div>
 
 </div>
@@ -462,32 +601,32 @@ Paradas inesperadas, corrosão, deformação e degradação costumam gerar custo
 <h2>O diferencial central</h2>
 
 <p>
-Se a estrutura muda antes da falha final, então observar mudança estrutural pode gerar vantagem operacional.
+A abordagem do JORGE não é tratar o dataset apenas por densidade visual. A leitura estrutural considera conectividade, continuidade, concentração e relevância espacial.
 </p>
 
 <div class="statement">
-Corrosão, deformação e perda de continuidade podem surgir como sinal estrutural antes do colapso evidente.
+Volume mostra onde existem pontos. Estrutura ajuda a entender onde pode existir informação operacional.
 </div>
 
 <p>
-O JORGE busca destacar conectividade, densidade, fragmentação e alterações espaciais em scans técnicos sucessivos.
+Em ambientes industriais, isso pode apoiar triagem, inspeção, comparação periódica e direcionamento da análise humana para regiões com maior relevância estrutural.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Comparação T0/T1</h3>
-<p>Observe mudanças entre inspeções periódicas.</p>
+<h3>Continuidade</h3>
+<p>Leitura de regiões conectadas e estruturas principais dentro do dataset.</p>
 </div>
 
 <div class="card">
-<h3>Leitura visual rápida</h3>
-<p>Viewer navegável para entender o ambiente técnico.</p>
+<h3>Concentração</h3>
+<p>Identificação visual de regiões densas ou estruturalmente relevantes.</p>
 </div>
 
 <div class="card">
-<h3>Priorização</h3>
-<p>Ajuda a direcionar atenção humana para regiões críticas.</p>
+<h3>Triagem</h3>
+<p>Redução do esforço inicial para encontrar onde olhar primeiro.</p>
 </div>
 
 </div>
@@ -503,29 +642,71 @@ O JORGE busca destacar conectividade, densidade, fragmentação e alterações e
 <h2 class="section-title">Aplicações iniciais</h2>
 
 <p class="section-sub">
-Primeiras frentes práticas para pilotos industriais.
+Primeiros casos onde o JORGE Industrial pode ser validado com dados reais.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Plantas industriais</h3>
-<p>Ambientes densos com tubulações, estruturas e ativos múltiplos.</p>
+<h3>LiDAR de plantas industriais</h3>
+<p>Ambientes densos com tubulações, passarelas, máquinas, estruturas metálicas e contexto operacional.</p>
 </div>
 
 <div class="card">
-<h3>Tanques e estruturas</h3>
-<p>Leitura geométrica e comparação de mudanças ao longo do tempo.</p>
+<h3>Comparação as-built x as-is</h3>
+<p>Uso do scan real como camada de leitura estrutural para apoiar comparação com referência de projeto.</p>
 </div>
 
 <div class="card">
-<h3>Galpões e ativos físicos</h3>
-<p>Scans periódicos para inspeção e acompanhamento.</p>
+<h3>Inspeção e manutenção</h3>
+<p>Triagem de regiões críticas para reduzir tempo de leitura e priorizar análise técnica.</p>
 </div>
 
 <div class="card">
-<h3>Manutenção preditiva</h3>
-<p>Nova camada de evidência visual para decisões de manutenção.</p>
+<h3>Planejamento de intervenção</h3>
+<p>Leitura espacial de ativos e entorno para apoiar decisões de campo e manutenção.</p>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="integracao">
+<div class="container">
+
+<h2 class="section-title">Como se integra ao fluxo industrial</h2>
+
+<p class="section-sub">
+Neste estágio, o JORGE atua como pipeline local e camada paralela de leitura estrutural. A integração nativa com ambientes industriais pode ser uma segunda fase após validação operacional.
+</p>
+
+<div class="integration">
+
+<div class="integration-box">
+<h3>Hoje: fluxo paralelo</h3>
+<p>
+O JORGE recebe arquivos ou datasets técnicos, processa localmente, gera representação canônica auditável e abre uma visualização estrutural especializada.
+</p>
+<ul>
+<li>entrada por arquivo/dataset</li>
+<li>processamento local</li>
+<li>viewer estrutural</li>
+<li>prints, evidências e leitura técnica</li>
+</ul>
+</div>
+
+<div class="integration-box">
+<h3>Próxima fase: integração orientada à dor</h3>
+<p>
+Após validar o caso operacional, o caminho natural é adaptar entrada/saída para fluxos existentes como CAD, BIM, E3D, Aveva ou rotinas internas.
+</p>
+<ul>
+<li>exportação de evidências</li>
+<li>relatórios técnicos</li>
+<li>camadas comparativas</li>
+<li>integração sob demanda</li>
+</ul>
 </div>
 
 </div>
@@ -539,24 +720,24 @@ Primeiras frentes práticas para pilotos industriais.
 <h2 class="section-title">Piloto Técnico Industrial</h2>
 
 <p class="section-sub">
-Use scans reais da operação para validar se o JORGE agrega valor ao seu fluxo.
+A melhor validação é simples: usar um dataset real e medir se a leitura estrutural ajuda uma equipe técnica a enxergar melhor o problema.
 </p>
 
 <div class="steps">
 
 <div class="step">
-<strong>1. Envie um scan</strong>
-<span>E57, PLY, PCD ou dataset técnico equivalente.</span>
+<strong>1. Dataset real</strong>
+<span>Scan, nuvem de pontos, LiDAR de planta ou arquivo técnico equivalente.</span>
 </div>
 
 <div class="step">
-<strong>2. Processamos</strong>
-<span>Geramos leitura estrutural e viewer navegável.</span>
+<strong>2. Leitura estrutural</strong>
+<span>Processamento local, camada estrutural e viewer navegável para análise.</span>
 </div>
 
 <div class="step">
-<strong>3. Avaliamos</strong>
-<span>Reunião objetiva para medir aderência operacional.</span>
+<strong>3. Conversa objetiva</strong>
+<span>Avaliar se a leitura ajuda inspeção, manutenção, planejamento ou comparação as-built x as-is.</span>
 </div>
 
 </div>
@@ -567,15 +748,30 @@ Use scans reais da operação para validar se o JORGE agrega valor ao seu fluxo.
 <section class="band" id="contato">
 <div class="container band-inner">
 
-<h2>Tem inspeção cara e complexa?</h2>
+<h2>Tem dados 3D difíceis de transformar em decisão?</h2>
 
 <p>
-Vamos conversar sobre como testar leitura estrutural com seus próprios dados.
+Vamos conversar sobre um caso real. O objetivo não é vender uma promessa grande: é validar se a leitura estrutural resolve uma dor operacional concreta.
 </p>
 
-<div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20avaliar%20um%20piloto%20JORGE%20Industrial." target="_blank">Entrar em contato</a>
+<div class="cta" style="justify-content:center">
+<a class="btn btn-primary" href="mailto:contato@jorgeengine.com.br">contato@jorgeengine.com.br</a>
+<a class="btn btn-secondary" href="mailto:gabriel@jorgeengine.com.br">gabriel@jorgeengine.com.br</a>
 <a class="btn btn-secondary" href="index.html">Voltar para plataforma</a>
+</div>
+
+<div class="contact-cards">
+<div class="contact-card">
+<h3>Contato comercial</h3>
+<p>Demonstrações, pilotos e validação operacional.</p>
+<a href="mailto:contato@jorgeengine.com.br">contato@jorgeengine.com.br</a>
+</div>
+
+<div class="contact-card">
+<h3>Contato direto</h3>
+<p>Alinhamento técnico e conversa com o fundador.</p>
+<a href="mailto:gabriel@jorgeengine.com.br">gabriel@jorgeengine.com.br</a>
+</div>
 </div>
 
 </div>
@@ -583,7 +779,7 @@ Vamos conversar sobre como testar leitura estrutural com seus próprios dados.
 
 <footer>
 <div class="container">
-JORGE Industrial © 2026 • Estrutura antes da falha
+JORGE Industrial © 2026 • Inspeção industrial, LiDAR de plantas e leitura estrutural aplicada
 </div>
 </footer>
 
