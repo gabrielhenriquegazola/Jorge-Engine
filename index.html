@@ -14,302 +14,504 @@ gtag('config', 'G-71YETQYR21');
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>JORGE Engine — Plataforma de Inteligência Estrutural</title>
+<title>JORGE Engine — Inteligência Estrutural para dados 3D, LiDAR e inspeção técnica</title>
 
 <link rel="icon" type="image/x-icon" href="jorge_icon.ico">
 
-<meta name="description" content="JORGE Engine transforma grandes volumes de dados em leitura estrutural clara. Aplicações em medicina, LiDAR, indústria, geologia e infraestrutura.">
+<meta name="description" content="JORGE Engine transforma grandes volumes de dados 3D em leitura estrutural clara, navegável e útil para decisão técnica. Aplicações em LiDAR, inspeção industrial, medicina, geologia e infraestrutura.">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
-font-family:Arial,Helvetica,sans-serif;
-background:#05070b;
-color:#fff;
-line-height:1.5;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#05070b;
+  color:#fff;
+  line-height:1.55;
 }
+img{max-width:100%;display:block}
+a{color:inherit}
 .container{
-width:100%;
-max-width:1180px;
-margin:auto;
-padding:0 24px;
+  width:100%;
+  max-width:1200px;
+  margin:auto;
+  padding:0 24px;
 }
 
 /* HEADER */
 header{
-position:sticky;
-top:0;
-z-index:100;
-background:rgba(5,7,11,.90);
-backdrop-filter:blur(10px);
-border-bottom:1px solid rgba(255,255,255,.06);
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:rgba(5,7,11,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.06);
 }
 .nav{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 0;
-gap:20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  padding:18px 0;
 }
 .logo{
-display:flex;
-align-items:center;
-gap:12px;
-font-size:24px;
-font-weight:800;
-text-decoration:none;
-color:#fff;
-transition:.2s;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  text-decoration:none;
+  color:#fff;
+  font-size:24px;
+  font-weight:800;
 }
-.logo:hover{opacity:.92;transform:translateY(-1px)}
 .logo img{
-height:38px;
-width:auto;
-display:block;
+  height:38px;
+  width:auto;
 }
 .nav-links{
-display:flex;
-gap:18px;
-align-items:center;
-flex-wrap:wrap;
+  display:flex;
+  gap:18px;
+  align-items:center;
+  flex-wrap:wrap;
 }
 .nav-links a{
-color:#dbe5f0;
-text-decoration:none;
-font-size:14px;
-transition:.2s;
+  text-decoration:none;
+  color:#c8d6e8;
+  font-size:14px;
+  transition:.2s;
 }
 .nav-links a:hover{color:#fff}
 
 /* HERO */
 .hero{
-padding:96px 0 78px;
-text-align:center;
-background:
-radial-gradient(circle at top,rgba(39,194,255,.18),transparent 42%),
-radial-gradient(circle at 70% 20%,rgba(241,195,90,.08),transparent 32%),
-linear-gradient(180deg,#05070b 0%,#07111d 100%);
+  position:relative;
+  overflow:hidden;
+  padding:96px 0 78px;
+  background:
+    radial-gradient(circle at 10% 10%, rgba(39,194,255,.20), transparent 28%),
+    radial-gradient(circle at 80% 18%, rgba(255,196,84,.12), transparent 20%),
+    radial-gradient(circle at 50% 100%, rgba(39,194,255,.08), transparent 35%),
+    linear-gradient(180deg,#05070b 0%,#07111d 48%,#05070b 100%);
+}
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(rgba(255,255,255,.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.025) 1px, transparent 1px);
+  background-size:42px 42px;
+  mask-image:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.02));
+  pointer-events:none;
+}
+.hero-inner{
+  position:relative;
+  z-index:1;
+  display:grid;
+  grid-template-columns:1.1fr .9fr;
+  gap:36px;
+  align-items:center;
 }
 .badge{
-display:inline-block;
-padding:8px 14px;
-border:1px solid rgba(255,255,255,.10);
-border-radius:999px;
-font-size:13px;
-color:#a9c5e8;
-margin-bottom:24px;
-background:rgba(255,255,255,.03);
+  display:inline-block;
+  padding:8px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.10);
+  background:rgba(255,255,255,.03);
+  color:#a7c4e6;
+  font-size:13px;
+  margin-bottom:22px;
 }
-.hero h1{
-font-size:64px;
-font-weight:900;
-line-height:1.05;
-margin-bottom:18px;
+.hero-copy h1{
+  font-size:64px;
+  line-height:1.03;
+  letter-spacing:-1.5px;
+  margin-bottom:18px;
 }
-.hero p{
-max-width:920px;
-margin:0 auto 18px;
-font-size:24px;
-color:#d8e2ee;
+.hero-copy .lead{
+  font-size:23px;
+  color:#dce7f3;
+  max-width:760px;
+  margin-bottom:16px;
 }
-.hero .sub{
-font-size:18px;
-color:#91a8c6;
-max-width:860px;
-margin-bottom:34px;
+.hero-copy .sub{
+  font-size:18px;
+  color:#96adc8;
+  max-width:720px;
+  margin-bottom:28px;
 }
 .cta{
-display:flex;
-justify-content:center;
-gap:14px;
-flex-wrap:wrap;
-margin-bottom:34px;
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-bottom:30px;
 }
 .btn{
-padding:14px 24px;
-border-radius:10px;
-text-decoration:none;
-font-weight:800;
-font-size:15px;
-transition:.2s;
-display:inline-block;
+  display:inline-block;
+  padding:14px 22px;
+  border-radius:12px;
+  text-decoration:none;
+  font-size:15px;
+  font-weight:800;
+  transition:.2s;
 }
 .btn-primary{
-background:#27c2ff;
-color:#03131f;
+  background:#27c2ff;
+  color:#03131f;
 }
 .btn-primary:hover{
-transform:translateY(-2px);
-background:#55d1ff;
+  transform:translateY(-2px);
+  background:#56d2ff;
 }
 .btn-secondary{
-border:1px solid rgba(255,255,255,.14);
-color:#fff;
-background:rgba(255,255,255,.03);
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
 }
 .btn-secondary:hover{
-transform:translateY(-2px);
-background:rgba(255,255,255,.07);
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.07);
+}
+.hero-note{
+  color:#7f95b3;
+  font-size:14px;
+}
+.hero-panel{
+  background:linear-gradient(180deg, rgba(11,19,32,.92), rgba(8,13,24,.92));
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 30px 60px rgba(0,0,0,.32);
+}
+.panel-top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  margin-bottom:16px;
+}
+.panel-title{
+  font-size:15px;
+  font-weight:800;
+  color:#dce7f3;
+}
+.panel-tag{
+  font-size:12px;
+  padding:6px 10px;
+  border-radius:999px;
+  background:rgba(39,194,255,.12);
+  border:1px solid rgba(39,194,255,.28);
+  color:#79d7ff;
+}
+.panel-image{
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  margin-bottom:14px;
+}
+.panel-list{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:10px;
+}
+.panel-item{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:12px;
+  padding:12px 14px;
+}
+.panel-item strong{
+  display:block;
+  font-size:14px;
+  margin-bottom:4px;
+}
+.panel-item span{
+  font-size:13px;
+  color:#96adc8;
 }
 
-/* METRICS */
+/* METRICS STRIP */
+.metrics-wrap{
+  margin-top:18px;
+}
 .metrics{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:14px;
-margin-top:18px;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:14px;
 }
 .metric{
-padding:18px;
-border-radius:14px;
-background:#0b1320;
-border:1px solid rgba(255,255,255,.06);
+  padding:18px;
+  border-radius:14px;
+  background:#0b1320;
+  border:1px solid rgba(255,255,255,.06);
 }
 .metric strong{
-display:block;
-font-size:24px;
-margin-bottom:6px;
+  display:block;
+  font-size:24px;
+  margin-bottom:6px;
 }
 .metric span{
-font-size:14px;
-color:#8fa4c0;
+  color:#90a7c3;
+  font-size:14px;
 }
 
-/* Sections */
-section{padding:78px 0}
+/* GENERAL */
+section{padding:84px 0}
 .section-title{
-font-size:38px;
-text-align:center;
-margin-bottom:14px;
+  font-size:40px;
+  text-align:center;
+  margin-bottom:12px;
 }
 .section-sub{
-text-align:center;
-max-width:820px;
-margin:0 auto 44px;
-color:#9db0c7;
-font-size:18px;
+  text-align:center;
+  max-width:860px;
+  margin:0 auto 42px;
+  color:#97adc7;
+  font-size:18px;
 }
 .grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:18px;
+  display:grid;
+  gap:18px;
+}
+.grid-3{
+  grid-template-columns:repeat(3,1fr);
+}
+.grid-4{
+  grid-template-columns:repeat(4,1fr);
 }
 .card{
-display:block;
-text-decoration:none;
-background:#0b1320;
-border:1px solid rgba(255,255,255,.06);
-border-radius:16px;
-padding:26px;
-transition:.2s;
-color:#fff;
+  background:#0b1320;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:18px;
+  padding:24px;
+  transition:.22s;
 }
 .card:hover{
-transform:translateY(-5px);
-border-color:rgba(39,194,255,.35);
+  transform:translateY(-5px);
+  border-color:rgba(39,194,255,.28);
 }
 .card h3{
-font-size:22px;
-margin-bottom:10px;
+  font-size:22px;
+  margin-bottom:10px;
 }
 .card p{
-color:#9db0c7;
-font-size:15px;
+  color:#9cb0c8;
+  font-size:15px;
 }
 .card small{
-display:inline-block;
-margin-top:14px;
-color:#27c2ff;
-font-weight:700;
+  display:inline-block;
+  margin-top:14px;
+  color:#6fd8ff;
+  font-weight:700;
 }
 
-/* FEATURED */
+/* PROBLEM / SOLUTION */
+.split{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+}
+.highlight{
+  border-radius:22px;
+  padding:28px;
+  border:1px solid rgba(255,255,255,.06);
+  background:linear-gradient(180deg,#0a1220,#0a1018);
+}
+.highlight h3{
+  font-size:28px;
+  margin-bottom:12px;
+}
+.highlight p{
+  color:#cdd9e7;
+  margin-bottom:14px;
+  font-size:17px;
+}
+.highlight ul{
+  margin-left:18px;
+  color:#94abc7;
+}
+.highlight li{margin-bottom:8px}
+
+/* FEATURE */
 .featured{
-background:linear-gradient(135deg,#07111d,#101c2d);
-border-top:1px solid rgba(255,255,255,.05);
-border-bottom:1px solid rgba(255,255,255,.05);
+  background:linear-gradient(180deg,#07111d,#0b1320);
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
 }
 .feature-box{
-display:grid;
-grid-template-columns:1.2fr .8fr;
-gap:30px;
-align-items:center;
-}
-.feature-box img{
-width:100%;
-border-radius:18px;
-border:1px solid rgba(255,255,255,.08);
-display:block;
+  display:grid;
+  grid-template-columns:1.05fr .95fr;
+  gap:28px;
+  align-items:center;
 }
 .feature-copy h2{
-font-size:42px;
-margin-bottom:16px;
+  font-size:42px;
+  margin-bottom:16px;
 }
 .feature-copy p{
-font-size:18px;
-color:#c7d3e0;
-margin-bottom:14px;
+  color:#c6d3e3;
+  font-size:18px;
+  margin-bottom:14px;
 }
 .feature-copy .mini{
-font-size:15px;
-color:#8fa4c0;
+  color:#90a7c3;
+  font-size:15px;
+}
+.feature-image{
+  border-radius:20px;
+  overflow:hidden;
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 20px 50px rgba(0,0,0,.28);
 }
 
-/* BAND */
+/* VERTICALS */
+.vertical-card{
+  display:block;
+  text-decoration:none;
+  color:#fff;
+  background:#0b1320;
+  border:1px solid rgba(255,255,255,.06);
+  border-radius:18px;
+  padding:26px;
+  transition:.22s;
+}
+.vertical-card:hover{
+  transform:translateY(-5px);
+  border-color:rgba(39,194,255,.28);
+}
+.vertical-card h3{
+  font-size:22px;
+  margin-bottom:10px;
+}
+.vertical-card p{
+  color:#9db0c7;
+  font-size:15px;
+}
+.vertical-card small{
+  display:inline-block;
+  margin-top:14px;
+  color:#6fd8ff;
+  font-weight:700;
+}
+
+/* DIFFERENCE */
+.diff-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+.diff-card{
+  padding:24px;
+  border-radius:18px;
+  background:#0b1320;
+  border:1px solid rgba(255,255,255,.06);
+}
+.diff-card h3{
+  font-size:21px;
+  margin-bottom:10px;
+}
+.diff-card p{
+  color:#9db0c7;
+  font-size:15px;
+}
+
+/* CONTACT BAND */
 .band{
-background:linear-gradient(90deg,#0b1320,#101c2d);
-border-top:1px solid rgba(255,255,255,.05);
-border-bottom:1px solid rgba(255,255,255,.05);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(39,194,255,.15), transparent 24%),
+    linear-gradient(90deg,#0a1220,#101c2d);
+  border-top:1px solid rgba(255,255,255,.05);
+  border-bottom:1px solid rgba(255,255,255,.05);
 }
 .band-inner{
-padding:56px 0;
-text-align:center;
+  text-align:center;
+  padding:66px 0;
 }
 .band-inner h2{
-font-size:36px;
-margin-bottom:12px;
+  font-size:40px;
+  margin-bottom:12px;
 }
 .band-inner p{
-font-size:18px;
-color:#9db0c7;
-margin-bottom:26px;
+  max-width:820px;
+  margin:0 auto 24px;
+  color:#9db0c7;
+  font-size:18px;
+}
+.contact-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+  margin-top:30px;
+}
+.contact-card{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:16px;
+  padding:20px;
+}
+.contact-card h3{
+  font-size:18px;
+  margin-bottom:8px;
+}
+.contact-card p{
+  color:#9db0c7;
+  font-size:14px;
+}
+.contact-card a{
+  color:#7edcff;
+  text-decoration:none;
+  font-weight:700;
 }
 
+/* FOOTER */
 footer{
-padding:34px 0;
-text-align:center;
-color:#7f90a8;
-font-size:14px;
-border-top:1px solid rgba(255,255,255,.05);
+  padding:32px 0 40px;
+  border-top:1px solid rgba(255,255,255,.05);
+  color:#7e91aa;
+  font-size:14px;
+}
+.footer-grid{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
 }
 
-/* MOBILE */
-@media(max-width:980px){
-.hero h1{font-size:52px}
-.metrics{grid-template-columns:repeat(2,1fr)}
-.feature-box{
-grid-template-columns:1fr;
+/* RESPONSIVE */
+@media(max-width:1060px){
+  .hero-inner,
+  .feature-box,
+  .split{
+    grid-template-columns:1fr;
+  }
+  .metrics{grid-template-columns:repeat(2,1fr)}
+  .grid-4{grid-template-columns:repeat(2,1fr)}
+  .grid-3,
+  .diff-grid,
+  .contact-grid{grid-template-columns:1fr}
 }
-}
-
-@media(max-width:640px){
-.nav{
-flex-direction:column;
-gap:14px;
-}
-.nav-links{
-justify-content:center;
-}
-.hero{
-padding:72px 0 56px;
-}
-.hero h1{font-size:40px}
-.hero p{font-size:20px}
-.hero .sub{font-size:16px}
-.metrics{grid-template-columns:1fr}
-.section-title{font-size:30px}
-.feature-copy h2{font-size:32px}
+@media(max-width:720px){
+  .nav{
+    flex-direction:column;
+    gap:14px;
+  }
+  .nav-links{
+    justify-content:center;
+  }
+  .hero{
+    padding:74px 0 58px;
+  }
+  .hero-copy h1{
+    font-size:42px;
+    line-height:1.06;
+  }
+  .hero-copy .lead{font-size:20px}
+  .hero-copy .sub{font-size:16px}
+  .section-title{font-size:30px}
+  .feature-copy h2{font-size:32px}
+  .band-inner h2{font-size:31px}
+  .metrics,
+  .grid-4{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -317,213 +519,308 @@ padding:72px 0 56px;
 <body>
 
 <header>
-<div class="container nav">
+  <div class="container nav">
+    <a href="./" class="logo">
+      <img src="jorge_logo.png" alt="JORGE Engine Logo">
+      <span>JORGE Engine</span>
+    </a>
 
-<a href="./" class="logo">
-<img src="jorge_logo.png" alt="JORGE Engine Logo">
-<span>JORGE Engine</span>
-</a>
-
-<div class="nav-links">
-<a href="#sobre">Sobre</a>
-<a href="#verticais">Verticais</a>
-<a href="experimentos.html">Evidências</a>
-<a href="#contato">Contato</a>
-<a href="https://github.com/gabrielhenriquegazola/Jorge-Engine" target="_blank">GitHub</a>
-</div>
-
-</div>
+    <nav class="nav-links">
+      <a href="#sobre">Sobre</a>
+      <a href="#prova">Prova de valor</a>
+      <a href="#verticais">Setores</a>
+      <a href="experimentos.html">Evidências</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
 </header>
 
 <section class="hero">
-<div class="container">
+  <div class="container">
+    <div class="hero-inner">
 
-<div class="badge">JORGE Engine • Plataforma Brasileira de Inteligência Estrutural</div>
+      <div class="hero-copy">
+        <div class="badge">JORGE Engine • Plataforma Brasileira de Inteligência Estrutural</div>
 
-<h1>Volume mostra quantidade.<br>Estrutura revela o que importa.</h1>
+        <h1>Volume mostra quantidade.<br>Estrutura revela o que importa.</h1>
 
-<p>
-Transforme grandes volumes de dados em leitura estrutural clara, navegável e útil para decisão técnica.
-</p>
+        <p class="lead">
+          Inteligência estrutural para dados 3D, LiDAR, scans e volumes técnicos.
+        </p>
 
-<p class="sub">
-Aplicado a medicina, LiDAR, indústria, geologia e infraestrutura. Processamento local, visualização própria e tecnologia nacional.
-</p>
+        <p class="sub">
+          O JORGE transforma grandes massas de dados em leitura estrutural clara, navegável e útil para decisão técnica — com processamento local, visualização própria e foco em contexto operacional real.
+        </p>
 
-<div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20vim%20pelo%20site%20JORGE%20Engine." target="_blank">Falar no WhatsApp</a>
-<a class="btn btn-secondary" href="experimentos.html">Ver evidências</a>
-<a class="btn btn-secondary" href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">LinkedIn</a>
-</div>
+        <div class="cta">
+          <a class="btn btn-primary" href="#verticais">Ver demonstrações</a>
+          <a class="btn btn-secondary" href="experimentos.html">Ver evidências</a>
+          <a class="btn btn-secondary" href="mailto:contato@jorgeengine.com.br">Falar por e-mail</a>
+        </div>
 
-<div class="metrics">
-<div class="metric">
-<strong>132M+</strong>
-<span>pontos processados</span>
-</div>
+        <div class="hero-note">
+          <strong>Contato comercial:</strong> contato@jorgeengine.com.br &nbsp;•&nbsp;
+          <strong>Contato direto:</strong> gabriel@jorgeengine.com.br
+        </div>
+      </div>
 
-<div class="metric">
-<strong>Local</strong>
-<span>execução desktop</span>
-</div>
+      <div class="hero-panel">
+        <div class="panel-top">
+          <div class="panel-title">Leitura estrutural em ação</div>
+          <div class="panel-tag">MVP demonstrável</div>
+        </div>
 
-<div class="metric">
-<strong>5+</strong>
-<span>verticais estratégicas</span>
-</div>
+        <div class="panel-image">
+          <img src="morphology-score-progression.png" alt="Visual estrutural JORGE Engine">
+        </div>
 
-<div class="metric">
-<strong>Viewer</strong>
-<span>visualização própria</span>
-</div>
-</div>
+        <div class="panel-list">
+          <div class="panel-item">
+            <strong>Não é só visualização</strong>
+            <span>O sistema destaca conectividade, relevância e regiões críticas do dataset.</span>
+          </div>
+          <div class="panel-item">
+            <strong>Preparado para escala</strong>
+            <span>Pipeline local ponta a ponta, com suporte a grandes nuvens e volumes.</span>
+          </div>
+          <div class="panel-item">
+            <strong>Orientado a decisão</strong>
+            <span>Da inspeção à triagem técnica, o foco é transformar massa de dados em leitura útil.</span>
+          </div>
+        </div>
+      </div>
 
-</div>
-</section>
+    </div>
 
-<section class="featured">
-<div class="container">
-
-<div class="feature-box">
-
-<div class="feature-copy">
-<h2>Já temos evidências mensuráveis</h2>
-
-<p>
-O JORGE não depende apenas de narrativa visual. Já existem experimentos comparativos mostrando conectividade superior, menor fragmentação e progressão morfológica coerente.
-</p>
-
-<p>
-Resultados iniciais indicam que o score estrutural captura propriedades reais do espaço, além de simples densidade local.
-</p>
-
-<p class="mini">
-Página dedicada com gráficos executivos e explicações claras para clientes e parceiros.
-</p>
-
-<div class="cta" style="justify-content:flex-start;margin-top:18px;margin-bottom:0">
-<a class="btn btn-primary" href="experimentos.html">Abrir Evidências Técnicas</a>
-</div>
-</div>
-
-<div>
-<img src="morphology-score-progression.png" alt="Evidência estrutural JORGE">
-</div>
-
-</div>
-
-</div>
+    <div class="metrics-wrap">
+      <div class="metrics">
+        <div class="metric">
+          <strong>132M+</strong>
+          <span>pontos já processados em testes de escala</span>
+        </div>
+        <div class="metric">
+          <strong>Local</strong>
+          <span>execução desktop, sem depender de infraestrutura complexa</span>
+        </div>
+        <div class="metric">
+          <strong>4 frentes</strong>
+          <span>LiDAR, industrial, médico e científico</span>
+        </div>
+        <div class="metric">
+          <strong>Viewer próprio</strong>
+          <span>visualização especializada por domínio</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="sobre">
-<div class="container">
+  <div class="container">
+    <h2 class="section-title">O problema não é falta de dados.</h2>
+    <p class="section-sub">
+      O problema é quando milhões de pontos existem, mas a leitura continua lenta, subjetiva e operacionalmente fraca.
+    </p>
 
-<h2 class="section-title">O que é o JORGE</h2>
+    <div class="split">
+      <div class="highlight">
+        <h3>O cenário tradicional</h3>
+        <p>
+          Em muitos fluxos, o operador precisa navegar manualmente por um volume enorme de dados para tentar identificar o que realmente importa.
+        </p>
+        <ul>
+          <li>muito volume, pouca leitura</li>
+          <li>análise cansativa e dependente do olhar humano</li>
+          <li>dificuldade para separar contexto, ruído e relevância</li>
+          <li>baixo aproveitamento operacional de scans e nuvens</li>
+        </ul>
+      </div>
 
-<p class="section-sub">
-Uma plataforma criada para revelar estrutura em ambientes complexos, onde apenas volume de dados já não basta.
-</p>
+      <div class="highlight">
+        <h3>O que o JORGE faz</h3>
+        <p>
+          O JORGE calcula uma camada estrutural sobre o dataset e reorganiza a leitura visual com base em conectividade, continuidade e concentração.
+        </p>
+        <ul>
+          <li>destaca regiões de interesse</li>
+          <li>reduz esforço de inspeção visual</li>
+          <li>mantém contexto e estrutura principal</li>
+          <li>abre caminho para decisão técnica mais objetiva</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<div class="grid">
+<section class="featured" id="prova">
+  <div class="container">
+    <div class="feature-box">
+      <div class="feature-copy">
+        <h2>Mais que narrativa: já existem evidências concretas.</h2>
 
-<div class="card">
-<h3>Mais que visualização</h3>
-<p>Destaca relevância, conectividade e organização interna.</p>
-</div>
+        <p>
+          O JORGE já possui uma base demonstrável com pipeline funcional, viewers por domínio e resultados iniciais que mostram organização estrutural coerente em contextos distintos.
+        </p>
 
-<div class="card">
-<h3>Determinístico</h3>
-<p>Mesmo dataset, mesma lógica, mesma consistência.</p>
-</div>
+        <p>
+          Isso inclui validações visuais, testes de escala e experimentos comparativos que sustentam a ideia central: <strong>volume não é estrutura</strong>.
+        </p>
 
-<div class="card">
-<h3>Escalável</h3>
-<p>Preparado para grandes massas de dados.</p>
-</div>
+        <p class="mini">
+          Hoje o estágio é de MVP/produto demonstrável, orientado a validação com parceiros e dores operacionais reais.
+        </p>
 
-<div class="card">
-<h3>Multi-Domínio</h3>
-<p>Aplicável a múltiplos setores e formatos.</p>
-</div>
+        <div class="cta" style="margin-top:20px;margin-bottom:0">
+          <a class="btn btn-primary" href="experimentos.html">Abrir evidências técnicas</a>
+        </div>
+      </div>
 
-</div>
-
-</div>
+      <div class="feature-image">
+        <img src="morphology-score-progression.png" alt="Evidências visuais e técnicas do JORGE Engine">
+      </div>
+    </div>
+  </div>
 </section>
 
 <section id="verticais">
-<div class="container">
+  <div class="container">
+    <h2 class="section-title">Setores e frentes demonstráveis</h2>
+    <p class="section-sub">
+      A mesma base tecnológica, com leitura especializada para diferentes ambientes de dados.
+    </p>
 
-<h2 class="section-title">Verticais Estratégicas</h2>
+    <div class="grid grid-3">
 
-<p class="section-sub">
-Soluções especializadas construídas sobre a mesma base tecnológica.
-</p>
+      <a class="vertical-card" href="lidar.html">
+        <h3>JORGE LiDAR</h3>
+        <p>
+          Nuvens massivas, terreno, cidades, vegetação e infraestrutura com leitura estrutural voltada à navegação e triagem.
+        </p>
+        <small>Explorar LiDAR →</small>
+      </a>
 
-<div class="grid">
+      <a class="vertical-card" href="ind.html">
+        <h3>JORGE Industrial</h3>
+        <p>
+          Scans industriais, inspeção, as-built x as-is, contexto operacional e priorização de regiões críticas.
+        </p>
+        <small>Explorar industrial →</small>
+      </a>
 
-<a class="card" href="med.html">
-<h3>JORGE Med</h3>
-<p>Imagem médica, conectividade tumoral e comparação temporal.</p>
-<small>Explorar setor →</small>
-</a>
+      <a class="vertical-card" href="med.html">
+        <h3>JORGE Med</h3>
+        <p>
+          Pesquisa aplicada em imagem médica, leitura estrutural de volumes e comparação temporal.
+        </p>
+        <small>Explorar frente médica →</small>
+      </a>
 
-<a class="card" href="lidar.html">
-<h3>JORGE LiDAR</h3>
-<p>Nuvens massivas, cidades, terreno e infraestrutura.</p>
-<small>Explorar setor →</small>
-</a>
+      <a class="vertical-card" href="geologia.html">
+        <h3>JORGE Geologia</h3>
+        <p>
+          Taludes, mineração, geotecnia e leitura espacial de regiões com comportamento estrutural relevante.
+        </p>
+        <small>Explorar geologia →</small>
+      </a>
 
-<a class="card" href="ind.html">
-<h3>JORGE Industrial</h3>
-<p>Estrutura antes da falha e manutenção preditiva.</p>
-<small>Explorar setor →</small>
-</a>
+      <a class="vertical-card" href="infra.html">
+        <h3>JORGE Infra</h3>
+        <p>
+          Energia, telecom, logística e ambientes complexos que exigem leitura espacial objetiva.
+        </p>
+        <small>Explorar infraestrutura →</small>
+      </a>
 
-<a class="card" href="geologia.html">
-<h3>JORGE Geologia</h3>
-<p>Taludes, mineração, geotecnia e risco espacial.</p>
-<small>Explorar setor →</small>
-</a>
+      <a class="vertical-card" href="experimentos.html">
+        <h3>Evidências Técnicas</h3>
+        <p>
+          Resultados comparativos, gráficos, métricas iniciais e material de sustentação técnica do projeto.
+        </p>
+        <small>Ver evidências →</small>
+      </a>
 
-<a class="card" href="infra.html">
-<h3>JORGE Infra</h3>
-<p>Telecom, logística, energia e cidades inteligentes.</p>
-<small>Explorar setor →</small>
-</a>
+    </div>
+  </div>
+</section>
 
-<a class="card" href="experimentos.html">
-<h3>Evidências Técnicas</h3>
-<p>Resultados comparativos, gráficos e validações estruturais.</p>
-<small>Explorar setor →</small>
-</a>
+<section>
+  <div class="container">
+    <h2 class="section-title">O que diferencia o JORGE</h2>
+    <p class="section-sub">
+      Não é um visualizador genérico. É uma proposta de leitura estrutural aplicada a datasets complexos.
+    </p>
 
-</div>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <h3>Leitura estrutural</h3>
+        <p>
+          Em vez de mostrar apenas massa de dados, o sistema procura revelar conectividade, continuidade e relevância espacial.
+        </p>
+      </div>
 
-</div>
+      <div class="diff-card">
+        <h3>Pipeline próprio</h3>
+        <p>
+          Da ingestão ao viewer, o fluxo foi construído para manter consistência, auditabilidade e independência tecnológica.
+        </p>
+      </div>
+
+      <div class="diff-card">
+        <h3>Potencial operacional</h3>
+        <p>
+          O valor está em reduzir o esforço de interpretação e orientar triagem, inspeção e análise técnica com mais clareza.
+        </p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <section class="band" id="contato">
-<div class="container band-inner">
+  <div class="container band-inner">
+    <h2>Buscando pilotos, parceiros e validação em campo</h2>
+    <p>
+      Se sua empresa trabalha com nuvens de pontos, dados 3D, inspeção, LiDAR ou ambientes operacionais complexos, o próximo passo é simples: ver se o JORGE resolve uma dor prática real.
+    </p>
 
-<h2>Buscando pilotos e parcerias estratégicas</h2>
+    <div class="cta" style="justify-content:center">
+      <a class="btn btn-primary" href="mailto:contato@jorgeengine.com.br">contato@jorgeengine.com.br</a>
+      <a class="btn btn-secondary" href="mailto:gabriel@jorgeengine.com.br">gabriel@jorgeengine.com.br</a>
+      <a class="btn btn-secondary" href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">LinkedIn</a>
+    </div>
 
-<p>
-Se sua empresa trabalha com dados complexos, grandes volumes ou ambientes críticos, vamos conversar.
-</p>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Contato comercial</h3>
+        <p>Para apresentações, demonstrações, pilotos e primeiras conversas.</p>
+        <a href="mailto:contato@jorgeengine.com.br">contato@jorgeengine.com.br</a>
+      </div>
 
-<div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20conhecer%20o%20JORGE%20Engine." target="_blank">Entrar em contato</a>
-<a class="btn btn-secondary" href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">LinkedIn</a>
-</div>
+      <div class="contact-card">
+        <h3>Contato direto</h3>
+        <p>Canal direto com o fundador para alinhamentos técnicos e estratégicos.</p>
+        <a href="mailto:gabriel@jorgeengine.com.br">gabriel@jorgeengine.com.br</a>
+      </div>
 
-</div>
+      <div class="contact-card">
+        <h3>Base</h3>
+        <p>JORGE Engine • São Bernardo do Campo — SP, Brasil</p>
+        <a href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">Perfil no LinkedIn</a>
+      </div>
+    </div>
+  </div>
 </section>
 
 <footer>
-<div class="container">
-JORGE Engine © 2026 • Plataforma de Inteligência Estrutural
-</div>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        © 2026 JORGE Engine — Plataforma de Inteligência Estrutural
+      </div>
+      <div>
+        contato@jorgeengine.com.br • gabriel@jorgeengine.com.br
+      </div>
+    </div>
+  </div>
 </footer>
 
 </body>
