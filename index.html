@@ -107,6 +107,35 @@
       color: #fff
     }
 
+    .lang-switcher {
+      margin-left: 12px;
+      display: flex;
+      gap: 6px;
+    }
+
+    .lang-btn {
+      background: none;
+      border: 1px solid #fff3;
+      color: #fff;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: .2s;
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .lang-btn:hover {
+      border-color: #27c2ff;
+      color: #27c2ff;
+    }
+
+    .lang-btn.active {
+      background: #27c2ff;
+      color: #03131f;
+      border-color: #27c2ff;
+    }
+
     /* HERO */
     .hero {
       position: relative;
@@ -601,6 +630,7 @@
 
       .nav-links {
         justify-content: center;
+        flex-direction: column;
       }
 
       .hero {
@@ -650,27 +680,16 @@
       </a>
 
       <nav class="nav-links">
-        <a href="#sobre">Sobre</a>
-        <a href="#prova">Prova de valor</a>
-        <a href="#verticais">Setores</a>
-        <a href="experimentos.html">Evidências</a>
-        <a href="#contato">Contato</a>
-        <nav class="nav-links">
-          <a href="#sobre">Sobre</a>
-          <a href="#prova">Prova de valor</a>
-          <a href="#verticais">Setores</a>
-          <a href="experimentos.html">Evidências</a>
-          <a href="#contato">Contato</a>
+        <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
+        <a href="#prova" data-pt="Prova de valor" data-en="Proof of value">Prova de valor</a>
+        <a href="#verticais" data-pt="Setores" data-en="Industries">Setores</a>
+        <a href="experimentos.html" data-pt="Evidências" data-en="Evidence">Evidências</a>
+        <a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
 
-          <!-- 🔽 COLE AQUI -->
-          <div style="margin-left:12px; display:flex; gap:6px;">
-            <button onclick="setLang('pt')"
-              style="background:none;border:1px solid #fff3;color:#fff;padding:4px 8px;border-radius:6px;cursor:pointer;">PT</button>
-            <button onclick="setLang('en')"
-              style="background:none;border:1px solid #fff3;color:#fff;padding:4px 8px;border-radius:6px;cursor:pointer;">EN</button>
-          </div>
-
-        </nav>
+        <div class="lang-switcher">
+          <button class="lang-btn active" onclick="setLang('pt')" data-lang="pt">PT</button>
+          <button class="lang-btn" onclick="setLang('en')" data-lang="en">EN</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -680,35 +699,35 @@
       <div class="hero-inner">
 
         <div class="hero-copy">
-          <div class="badge">JORGE Engine • Plataforma Brasileira de Inteligência Estrutural</div>
+          <div class="badge" data-pt="JORGE Engine • Plataforma Brasileira de Inteligência Estrutural" data-en="JORGE Engine • Brazilian Structural Intelligence Platform">JORGE Engine • Plataforma Brasileira de Inteligência Estrutural</div>
 
-          <h1>Volume mostra quantidade.<br>Estrutura revela o que importa.</h1>
+          <h1 data-pt="Volume mostra quantidade.<br>Estrutura revela o que importa." data-en="Volume shows quantity.<br>Structure reveals what matters.">Volume mostra quantidade.<br>Estrutura revela o que importa.</h1>
 
-          <p class="lead">
+          <p class="lead" data-pt="Inteligência estrutural para dados 3D, LiDAR, scans e volumes técnicos." data-en="Structural intelligence for 3D data, LiDAR, scans and technical volumes.">
             Inteligência estrutural para dados 3D, LiDAR, scans e volumes técnicos.
           </p>
 
-          <p class="sub">
+          <p class="sub" data-pt="O JORGE transforma grandes massas de dados em leitura estrutural clara, navegável e útil para decisão técnica — com processamento local, visualização própria e foco em contexto operacional real." data-en="JORGE transforms large data volumes into clear, navigable structural reading useful for technical decisions — with local processing, specialized visualization and focus on real operational context.">
             O JORGE transforma grandes massas de dados em leitura estrutural clara, navegável e útil para decisão
             técnica — com processamento local, visualização própria e foco em contexto operacional real.
           </p>
 
           <div class="cta">
-            <a class="btn btn-primary" href="#verticais">Ver demonstrações</a>
-            <a class="btn btn-secondary" href="experimentos.html">Ver evidências</a>
-            <a class="btn btn-secondary" href="mailto:contato@jorgeengine.com.br">Falar por e-mail</a>
+            <a class="btn btn-primary" href="#verticais" data-pt="Ver demonstrações" data-en="See demonstrations">Ver demonstrações</a>
+            <a class="btn btn-secondary" href="experimentos.html" data-pt="Ver evidências" data-en="View evidence">Ver evidências</a>
+            <a class="btn btn-secondary" href="mailto:contato@jorgeengine.com.br" data-pt="Falar por e-mail" data-en="Send email">Falar por e-mail</a>
           </div>
 
           <div class="hero-note">
-            <strong>Contato comercial:</strong> contato@jorgeengine.com.br &nbsp;•&nbsp;
-            <strong>Contato direto:</strong> gabriel@jorgeengine.com.br
+            <strong data-pt="Contato comercial:" data-en="Business contact:">Contato comercial:</strong> contato@jorgeengine.com.br &nbsp;•&nbsp;
+            <strong data-pt="Contato direto:" data-en="Direct contact:">Contato direto:</strong> gabriel@jorgeengine.com.br
           </div>
         </div>
 
         <div class="hero-panel">
           <div class="panel-top">
-            <div class="panel-title">Leitura estrutural em ação</div>
-            <div class="panel-tag">MVP demonstrável</div>
+            <div class="panel-title" data-pt="Leitura estrutural em ação" data-en="Structural reading in action">Leitura estrutural em ação</div>
+            <div class="panel-tag" data-pt="MVP demonstrável" data-en="Demonstrable MVP">MVP demonstrável</div>
           </div>
 
           <div class="panel-image">
@@ -717,16 +736,16 @@
 
           <div class="panel-list">
             <div class="panel-item">
-              <strong>Não é só visualização</strong>
-              <span>O sistema destaca conectividade, relevância e regiões críticas do dataset.</span>
+              <strong data-pt="Não é só visualização" data-en="It's not just visualization">Não é só visualização</strong>
+              <span data-pt="O sistema destaca conectividade, relevância e regiões críticas do dataset." data-en="The system highlights connectivity, relevance and critical regions of the dataset.">O sistema destaca conectividade, relevância e regiões críticas do dataset.</span>
             </div>
             <div class="panel-item">
-              <strong>Preparado para escala</strong>
-              <span>Pipeline local ponta a ponta, com suporte a grandes nuvens e volumes.</span>
+              <strong data-pt="Preparado para escala" data-en="Built for scale">Preparado para escala</strong>
+              <span data-pt="Pipeline local ponta a ponta, com suporte a grandes nuvens e volumes." data-en="End-to-end local pipeline, supporting large point clouds and volumes.">Pipeline local ponta a ponta, com suporte a grandes nuvens e volumes.</span>
             </div>
             <div class="panel-item">
-              <strong>Orientado a decisão</strong>
-              <span>Da inspeção à triagem técnica, o foco é transformar massa de dados em leitura útil.</span>
+              <strong data-pt="Orientado a decisão" data-en="Decision-oriented">Orientado a decisão</strong>
+              <span data-pt="Da inspeção à triagem técnica, o foco é transformar massa de dados em leitura útil." data-en="From inspection to technical screening, the focus is turning data mass into useful reading.">Da inspeção à triagem técnica, o foco é transformar massa de dados em leitura útil.</span>
             </div>
           </div>
         </div>
@@ -737,19 +756,19 @@
         <div class="metrics">
           <div class="metric">
             <strong>132M+</strong>
-            <span>pontos já processados em testes de escala</span>
+            <span data-pt="pontos já processados em testes de escala" data-en="points already processed in scale tests">pontos já processados em testes de escala</span>
           </div>
           <div class="metric">
-            <strong>Local</strong>
-            <span>execução desktop, sem depender de infraestrutura complexa</span>
+            <strong data-pt="Local" data-en="Local">Local</strong>
+            <span data-pt="execução desktop, sem depender de infraestrutura complexa" data-en="desktop execution, no complex infrastructure needed">execução desktop, sem depender de infraestrutura complexa</span>
           </div>
           <div class="metric">
             <strong>4 frentes</strong>
-            <span>LiDAR, industrial, médico e científico</span>
+            <span data-pt="LiDAR, industrial, médico e científico" data-en="LiDAR, industrial, medical and scientific">LiDAR, industrial, médico e científico</span>
           </div>
           <div class="metric">
-            <strong>Viewer próprio</strong>
-            <span>visualização especializada por domínio</span>
+            <strong data-pt="Viewer próprio" data-en="Proprietary viewer">Viewer próprio</strong>
+            <span data-pt="visualização especializada por domínio" data-en="domain-specialized visualization">visualização especializada por domínio</span>
           </div>
         </div>
       </div>
@@ -758,37 +777,37 @@
 
   <section id="sobre">
     <div class="container">
-      <h2 class="section-title">O problema não é falta de dados.</h2>
-      <p class="section-sub">
+      <h2 class="section-title" data-pt="O problema não é falta de dados." data-en="The problem is not lack of data.">O problema não é falta de dados.</h2>
+      <p class="section-sub" data-pt="O problema é quando milhões de pontos existem, mas a leitura continua lenta, subjetiva e operacionalmente fraca." data-en="The problem is when millions of points exist, but reading remains slow, subjective and operationally weak.">
         O problema é quando milhões de pontos existem, mas a leitura continua lenta, subjetiva e operacionalmente fraca.
       </p>
 
       <div class="split">
         <div class="highlight">
-          <h3>O cenário tradicional</h3>
-          <p>
+          <h3 data-pt="O cenário tradicional" data-en="The traditional scenario">O cenário tradicional</h3>
+          <p data-pt="Em muitos fluxos, o operador precisa navegar manualmente por um volume enorme de dados para tentar identificar o que realmente importa." data-en="In many workflows, the operator needs to manually navigate through an enormous volume of data to try to identify what really matters.">
             Em muitos fluxos, o operador precisa navegar manualmente por um volume enorme de dados para tentar
             identificar o que realmente importa.
           </p>
           <ul>
-            <li>muito volume, pouca leitura</li>
-            <li>análise cansativa e dependente do olhar humano</li>
-            <li>dificuldade para separar contexto, ruído e relevância</li>
-            <li>baixo aproveitamento operacional de scans e nuvens</li>
+            <li data-pt="muito volume, pouca leitura" data-en="large volume, little insight">muito volume, pouca leitura</li>
+            <li data-pt="análise cansativa e dependente do olhar humano" data-en="tedious analysis dependent on human judgment">análise cansativa e dependente do olhar humano</li>
+            <li data-pt="dificuldade para separar contexto, ruído e relevância" data-en="difficulty separating context, noise and relevance">dificuldade para separar contexto, ruído e relevância</li>
+            <li data-pt="baixo aproveitamento operacional de scans e nuvens" data-en="low operational utilization of scans and point clouds">baixo aproveitamento operacional de scans e nuvens</li>
           </ul>
         </div>
 
         <div class="highlight">
-          <h3>O que o JORGE faz</h3>
-          <p>
+          <h3 data-pt="O que o JORGE faz" data-en="What JORGE does">O que o JORGE faz</h3>
+          <p data-pt="O JORGE calcula uma camada estrutural sobre o dataset e reorganiza a leitura visual com base em conectividade, continuidade e concentração." data-en="JORGE calculates a structural layer over the dataset and reorganizes visual reading based on connectivity, continuity and concentration.">
             O JORGE calcula uma camada estrutural sobre o dataset e reorganiza a leitura visual com base em
             conectividade, continuidade e concentração.
           </p>
           <ul>
-            <li>destaca regiões de interesse</li>
-            <li>reduz esforço de inspeção visual</li>
-            <li>mantém contexto e estrutura principal</li>
-            <li>abre caminho para decisão técnica mais objetiva</li>
+            <li data-pt="destaca regiões de interesse" data-en="highlights regions of interest">destaca regiões de interesse</li>
+            <li data-pt="reduz esforço de inspeção visual" data-en="reduces visual inspection effort">reduz esforço de inspeção visual</li>
+            <li data-pt="mantém contexto e estrutura principal" data-en="preserves context and main structure">mantém contexto e estrutura principal</li>
+            <li data-pt="abre caminho para decisão técnica mais objetiva" data-en="enables more objective technical decision-making">abre caminho para decisão técnica mais objetiva</li>
           </ul>
         </div>
       </div>
@@ -799,25 +818,25 @@
     <div class="container">
       <div class="feature-box">
         <div class="feature-copy">
-          <h2>Mais que narrativa: já existem evidências concretas.</h2>
+          <h2 data-pt="Mais que narrativa: já existem evidências concretas." data-en="More than narrative: concrete evidence already exists.">Mais que narrativa: já existem evidências concretas.</h2>
 
-          <p>
+          <p data-pt="O JORGE já possui uma base demonstrável com pipeline funcional, viewers por domínio e resultados iniciais que mostram organização estrutural coerente em contextos distintos." data-en="JORGE already has a demonstrable foundation with functional pipeline, domain-specific viewers and initial results showing coherent structural organization in different contexts.">
             O JORGE já possui uma base demonstrável com pipeline funcional, viewers por domínio e resultados iniciais
             que mostram organização estrutural coerente em contextos distintos.
           </p>
 
-          <p>
+          <p data-pt="Isso inclui validações visuais, testes de escala e experimentos comparativos que sustentam a ideia central: <strong>volume não é estrutura</strong>." data-en="This includes visual validations, scale tests and comparative experiments supporting the core idea: <strong>volume is not structure</strong>.">
             Isso inclui validações visuais, testes de escala e experimentos comparativos que sustentam a ideia central:
             <strong>volume não é estrutura</strong>.
           </p>
 
-          <p class="mini">
+          <p class="mini" data-pt="Hoje o estágio é de MVP/produto demonstrável, orientado a validação com parceiros e dores operacionais reais." data-en="Today the stage is MVP/demonstrable product, focused on validation with partners and real operational pain points.">
             Hoje o estágio é de MVP/produto demonstrável, orientado a validação com parceiros e dores operacionais
             reais.
           </p>
 
           <div class="cta" style="margin-top:20px;margin-bottom:0">
-            <a class="btn btn-primary" href="experimentos.html">Abrir evidências técnicas</a>
+            <a class="btn btn-primary" href="experimentos.html" data-pt="Abrir evidências técnicas" data-en="Open technical evidence">Abrir evidências técnicas</a>
           </div>
         </div>
 
@@ -830,60 +849,60 @@
 
   <section id="verticais">
     <div class="container">
-      <h2 class="section-title">Setores e frentes demonstráveis</h2>
-      <p class="section-sub">
+      <h2 class="section-title" data-pt="Setores e frentes demonstráveis" data-en="Demonstrable sectors and fronts">Setores e frentes demonstráveis</h2>
+      <p class="section-sub" data-pt="A mesma base tecnológica, com leitura especializada para diferentes ambientes de dados." data-en="Same technological foundation, with specialized reading for different data environments.">
         A mesma base tecnológica, com leitura especializada para diferentes ambientes de dados.
       </p>
 
       <div class="grid grid-3">
 
         <a class="vertical-card" href="lidar.html">
-          <h3>JORGE LiDAR</h3>
-          <p>
+          <h3 data-pt="JORGE LiDAR" data-en="JORGE LiDAR">JORGE LiDAR</h3>
+          <p data-pt="Nuvens massivas, terreno, cidades, vegetação e infraestrutura com leitura estrutural voltada à navegação e triagem." data-en="Massive point clouds, terrain, cities, vegetation and infrastructure with structural reading focused on navigation and screening.">
             Nuvens massivas, terreno, cidades, vegetação e infraestrutura com leitura estrutural voltada à navegação e
             triagem.
           </p>
-          <small>Explorar LiDAR →</small>
+          <small data-pt="Explorar LiDAR →" data-en="Explore LiDAR →">Explorar LiDAR →</small>
         </a>
 
         <a class="vertical-card" href="ind.html">
-          <h3>JORGE Industrial</h3>
-          <p>
+          <h3 data-pt="JORGE Industrial" data-en="JORGE Industrial">JORGE Industrial</h3>
+          <p data-pt="Scans industriais, inspeção, as-built x as-is, contexto operacional e priorização de regiões críticas." data-en="Industrial scans, inspection, as-built vs as-is, operational context and critical region prioritization.">
             Scans industriais, inspeção, as-built x as-is, contexto operacional e priorização de regiões críticas.
           </p>
-          <small>Explorar industrial →</small>
+          <small data-pt="Explorar industrial →" data-en="Explore industrial →">Explorar industrial →</small>
         </a>
 
         <a class="vertical-card" href="med.html">
-          <h3>JORGE Med</h3>
-          <p>
+          <h3 data-pt="JORGE Med" data-en="JORGE Med">JORGE Med</h3>
+          <p data-pt="Pesquisa aplicada em imagem médica, leitura estrutural de volumes e comparação temporal." data-en="Applied research in medical imaging, structural volume reading and temporal comparison.">
             Pesquisa aplicada em imagem médica, leitura estrutural de volumes e comparação temporal.
           </p>
-          <small>Explorar frente médica →</small>
+          <small data-pt="Explorar frente médica →" data-en="Explore medical front →">Explorar frente médica →</small>
         </a>
 
         <a class="vertical-card" href="geologia.html">
-          <h3>JORGE Geologia</h3>
-          <p>
+          <h3 data-pt="JORGE Geologia" data-en="JORGE Geology">JORGE Geologia</h3>
+          <p data-pt="Taludes, mineração, geotecnia e leitura espacial de regiões com comportamento estrutural relevante." data-en="Slopes, mining, geotechnics and spatial reading of structurally relevant regions.">
             Taludes, mineração, geotecnia e leitura espacial de regiões com comportamento estrutural relevante.
           </p>
-          <small>Explorar geologia →</small>
+          <small data-pt="Explorar geologia →" data-en="Explore geology →">Explorar geologia →</small>
         </a>
 
         <a class="vertical-card" href="infra.html">
-          <h3>JORGE Infra</h3>
-          <p>
+          <h3 data-pt="JORGE Infra" data-en="JORGE Infrastructure">JORGE Infra</h3>
+          <p data-pt="Energia, telecom, logística e ambientes complexos que exigem leitura espacial objetiva." data-en="Energy, telecom, logistics and complex environments requiring objective spatial reading.">
             Energia, telecom, logística e ambientes complexos que exigem leitura espacial objetiva.
           </p>
-          <small>Explorar infraestrutura →</small>
+          <small data-pt="Explorar infraestrutura →" data-en="Explore infrastructure →">Explorar infraestrutura →</small>
         </a>
 
         <a class="vertical-card" href="experimentos.html">
-          <h3>Evidências Técnicas</h3>
-          <p>
+          <h3 data-pt="Evidências Técnicas" data-en="Technical Evidence">Evidências Técnicas</h3>
+          <p data-pt="Resultados comparativos, gráficos, métricas iniciais e material de sustentação técnica do projeto." data-en="Comparative results, charts, initial metrics and technical support material for the project.">
             Resultados comparativos, gráficos, métricas iniciais e material de sustentação técnica do projeto.
           </p>
-          <small>Ver evidências →</small>
+          <small data-pt="Ver evidências →" data-en="View evidence →">Ver evidências →</small>
         </a>
 
       </div>
@@ -892,31 +911,31 @@
 
   <section>
     <div class="container">
-      <h2 class="section-title">O que diferencia o JORGE</h2>
-      <p class="section-sub">
+      <h2 class="section-title" data-pt="O que diferencia o JORGE" data-en="What sets JORGE apart">O que diferencia o JORGE</h2>
+      <p class="section-sub" data-pt="Não é um visualizador genérico. É uma proposta de leitura estrutural aplicada a datasets complexos." data-en="It's not a generic viewer. It's a proposal for structural reading applied to complex datasets.">
         Não é um visualizador genérico. É uma proposta de leitura estrutural aplicada a datasets complexos.
       </p>
 
       <div class="diff-grid">
         <div class="diff-card">
-          <h3>Leitura estrutural</h3>
-          <p>
+          <h3 data-pt="Leitura estrutural" data-en="Structural reading">Leitura estrutural</h3>
+          <p data-pt="Em vez de mostrar apenas massa de dados, o sistema procura revelar conectividade, continuidade e relevância espacial." data-en="Rather than just showing data mass, the system seeks to reveal connectivity, continuity and spatial relevance.">
             Em vez de mostrar apenas massa de dados, o sistema procura revelar conectividade, continuidade e relevância
             espacial.
           </p>
         </div>
 
         <div class="diff-card">
-          <h3>Pipeline próprio</h3>
-          <p>
+          <h3 data-pt="Pipeline próprio" data-en="Proprietary pipeline">Pipeline próprio</h3>
+          <p data-pt="Da ingestão ao viewer, o fluxo foi construído para manter consistência, auditabilidade e independência tecnológica." data-en="From ingestion to viewer, the flow was built to maintain consistency, auditability and technological independence.">
             Da ingestão ao viewer, o fluxo foi construído para manter consistência, auditabilidade e independência
             tecnológica.
           </p>
         </div>
 
         <div class="diff-card">
-          <h3>Potencial operacional</h3>
-          <p>
+          <h3 data-pt="Potencial operacional" data-en="Operational potential">Potencial operacional</h3>
+          <p data-pt="O valor está em reduzir o esforço de interpretação e orientar triagem, inspeção e análise técnica com mais clareza." data-en="The value lies in reducing interpretation effort and guiding screening, inspection and technical analysis with greater clarity.">
             O valor está em reduzir o esforço de interpretação e orientar triagem, inspeção e análise técnica com mais
             clareza.
           </p>
@@ -927,8 +946,8 @@
 
   <section class="band" id="contato">
     <div class="container band-inner">
-      <h2>Buscando pilotos, parceiros e validação em campo</h2>
-      <p>
+      <h2 data-pt="Buscando pilotos, parceiros e validação em campo" data-en="Seeking pilots, partners and field validation">Buscando pilotos, parceiros e validação em campo</h2>
+      <p data-pt="Se sua empresa trabalha com nuvens de pontos, dados 3D, inspeção, LiDAR ou ambientes operacionais complexos, o próximo passo é simples: ver se o JORGE resolve uma dor prática real." data-en="If your company works with point clouds, 3D data, inspection, LiDAR or complex operational environments, the next step is simple: see if JORGE solves a real practical pain.">
         Se sua empresa trabalha com nuvens de pontos, dados 3D, inspeção, LiDAR ou ambientes operacionais complexos, o
         próximo passo é simples: ver se o JORGE resolve uma dor prática real.
       </p>
@@ -941,21 +960,21 @@
 
       <div class="contact-grid">
         <div class="contact-card">
-          <h3>Contato comercial</h3>
-          <p>Para apresentações, demonstrações, pilotos e primeiras conversas.</p>
+          <h3 data-pt="Contato comercial" data-en="Business contact">Contato comercial</h3>
+          <p data-pt="Para apresentações, demonstrações, pilotos e primeiras conversas." data-en="For presentations, demonstrations, pilots and initial conversations.">Para apresentações, demonstrações, pilotos e primeiras conversas.</p>
           <a href="mailto:contato@jorgeengine.com.br">contato@jorgeengine.com.br</a>
         </div>
 
         <div class="contact-card">
-          <h3>Contato direto</h3>
-          <p>Canal direto com o fundador para alinhamentos técnicos e estratégicos.</p>
+          <h3 data-pt="Contato direto" data-en="Direct contact">Contato direto</h3>
+          <p data-pt="Canal direto com o fundador para alinhamentos técnicos e estratégicos." data-en="Direct channel with founder for technical and strategic alignment.">Canal direto com o fundador para alinhamentos técnicos e estratégicos.</p>
           <a href="mailto:gabriel@jorgeengine.com.br">gabriel@jorgeengine.com.br</a>
         </div>
 
         <div class="contact-card">
-          <h3>Base</h3>
-          <p>JORGE Engine • São Bernardo do Campo — SP, Brasil</p>
-          <a href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">Perfil no LinkedIn</a>
+          <h3 data-pt="Base" data-en="Base">Base</h3>
+          <p data-pt="JORGE Engine • São Bernardo do Campo — SP, Brasil" data-en="JORGE Engine • São Bernardo do Campo — SP, Brazil">JORGE Engine • São Bernardo do Campo — SP, Brasil</p>
+          <a href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">LinkedIn</a>
         </div>
       </div>
     </div>
@@ -964,7 +983,7 @@
   <footer>
     <div class="container">
       <div class="footer-grid">
-        <div>
+        <div data-pt="© 2026 JORGE Engine — Plataforma de Inteligência Estrutural" data-en="© 2026 JORGE Engine — Structural Intelligence Platform">
           © 2026 JORGE Engine — Plataforma de Inteligência Estrutural
         </div>
         <div>
@@ -973,6 +992,78 @@
       </div>
     </div>
   </footer>
+
+  <script>
+    // Sistema de tradução completo e funcional
+    const translations = {
+      pt: {}, // Será preenchido dinamicamente
+      en: {}
+    };
+
+    // Carrega as traduções dos atributos data-pt e data-en
+    function loadTranslations() {
+      document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+        const key = el.getAttribute('data-pt');
+        const enText = el.getAttribute('data-en');
+        
+        if (key && enText) {
+          if (!translations.pt[key]) translations.pt[key] = key;
+          if (!translations.en[key]) translations.en[key] = enText;
+        }
+      });
+    }
+
+    // Define o idioma e muda todo conteúdo
+    function setLang(lang) {
+      // Valida se o idioma é válido
+      if (lang !== 'pt' && lang !== 'en') return;
+
+      // Atualiza localStorage
+      localStorage.setItem('preferredLang', lang);
+
+      // Atualiza botões
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        btn.classList.remove('active');
+        if (btn.getAttribute('data-lang') === lang) {
+          btn.classList.add('active');
+        }
+      });
+
+      // Traduz elementos
+      document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+        const ptText = el.getAttribute('data-pt');
+        const enText = el.getAttribute('data-en');
+        
+        if (lang === 'en') {
+          el.textContent = enText;
+        } else {
+          el.textContent = ptText;
+        }
+      });
+
+      // Atualiza atributo lang do HTML
+      document.documentElement.lang = lang === 'en' ? 'en-US' : 'pt-BR';
+
+      // Dispara evento customizado caso precise usar em outros scripts
+      window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+    }
+
+    // Inicializa
+    document.addEventListener('DOMContentLoaded', function() {
+      loadTranslations();
+      
+      // Verifica idioma salvo ou usa o padrão do navegador
+      let savedLang = localStorage.getItem('preferredLang');
+      
+      if (!savedLang) {
+        // Se não tem idioma salvo, usa o idioma do navegador
+        const browserLang = navigator.language.split('-')[0];
+        savedLang = (browserLang === 'en') ? 'en' : 'pt';
+      }
+      
+      setLang(savedLang);
+    });
+  </script>
 
 </body>
 
