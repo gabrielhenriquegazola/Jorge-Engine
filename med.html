@@ -14,7 +14,7 @@ gtag('config', 'G-71YETQYR21');
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>JORGE Med — Inteligência Estrutural em Imagem Médica</title>
+<title data-pt="JORGE Med — Inteligência Estrutural em Imagem Médica" data-en="JORGE Med — Structural Intelligence in Medical Imaging">JORGE Med — Inteligência Estrutural em Imagem Médica</title>
 
 <link rel="icon" type="image/x-icon" href="jorge_icon.ico">
 
@@ -87,6 +87,35 @@ transition:.2s;
 }
 
 .nav-links a:hover{color:#fff}
+
+.lang-switcher{
+margin-left:12px;
+display:flex;
+gap:6px;
+}
+
+.lang-btn{
+background:none;
+border:1px solid #fff3;
+color:#fff;
+padding:4px 8px;
+border-radius:6px;
+cursor:pointer;
+transition:.2s;
+font-size:12px;
+font-weight:600;
+}
+
+.lang-btn:hover{
+border-color:#ff4d5d;
+color:#ff4d5d;
+}
+
+.lang-btn.active{
+background:#ff4d5d;
+color:#fff;
+border-color:#ff4d5d;
+}
 
 /* HERO */
 .hero{
@@ -413,16 +442,21 @@ padding:24px;
 
 <a href="./" class="logo">
 <img src="jorge_logo.png" alt="JORGE Engine">
-<span>JORGE Med</span>
+<span data-pt="JORGE Med" data-en="JORGE Med">JORGE Med</span>
 </a>
 
 <div class="nav-links">
-<a href="./">Plataforma</a>
-<a href="#conceito">Conceito</a>
-<a href="#determinismo">Determinismo</a>
-<a href="#casos">Casos</a>
-<a href="#pesquisa">Pesquisa</a>
-<a href="#contato">Contato</a>
+<a href="./" data-pt="Plataforma" data-en="Platform">Plataforma</a>
+<a href="#conceito" data-pt="Conceito" data-en="Concept">Conceito</a>
+<a href="#determinismo" data-pt="Determinismo" data-en="Determinism">Determinismo</a>
+<a href="#casos" data-pt="Casos" data-en="Cases">Casos</a>
+<a href="#pesquisa" data-pt="Pesquisa" data-en="Research">Pesquisa</a>
+<a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+
+<div class="lang-switcher">
+<button class="lang-btn active" onclick="setLang('pt')" data-lang="pt">PT</button>
+<button class="lang-btn" onclick="setLang('en')" data-lang="en">EN</button>
+</div>
 </div>
 
 </div>
@@ -431,45 +465,45 @@ padding:24px;
 <section class="hero">
 <div class="container">
 
-<div class="badge">JORGE Med • Inteligência estrutural aplicada à imagem médica</div>
+<div class="badge" data-pt="JORGE Med • Inteligência estrutural aplicada à imagem médica" data-en="JORGE Med • Structural intelligence applied to medical imaging">JORGE Med • Inteligência estrutural aplicada à imagem médica</div>
 
-<h1>Volume não é estrutura.</h1>
+<h1 data-pt="Volume não é estrutura." data-en="Volume is not structure.">Volume não é estrutura.</h1>
 
-<p>
+<p data-pt="Milhões de voxels podem existir em um exame. Mas conectividade, organização espacial e mudança estrutural contam outra história." data-en="Millions of voxels can exist in an exam. But connectivity, spatial organization and structural change tell another story.">
 Milhões de voxels podem existir em um exame.  
 Mas conectividade, organização espacial e mudança estrutural contam outra história.
 </p>
 
-<p class="sub">
+<p class="sub" data-pt="JORGE Med aplica processamento determinístico e leitura estrutural a volumes médicos para apoiar pesquisa, comparação temporal e exploração técnica responsável." data-en="JORGE Med applies deterministic processing and structural reading to medical volumes to support research, temporal comparison and responsible technical exploration.">
 JORGE Med aplica processamento determinístico e leitura estrutural a volumes médicos para apoiar pesquisa, comparação temporal e exploração técnica responsável.
 </p>
 
 <div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20conhecer%20o%20JORGE%20Med." target="_blank">Conversar sobre JORGE Med</a>
-<a class="btn btn-secondary" href="#casos">Ver imagens</a>
-<a class="btn btn-secondary" href="#pesquisa">Parcerias</a>
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20conhecer%20o%20JORGE%20Med." target="_blank" data-pt="Conversar sobre JORGE Med" data-en="Talk about JORGE Med">Conversar sobre JORGE Med</a>
+<a class="btn btn-secondary" href="#casos" data-pt="Ver imagens" data-en="See images">Ver imagens</a>
+<a class="btn btn-secondary" href="#pesquisa" data-pt="Parcerias" data-en="Partnerships">Parcerias</a>
 </div>
 
 <div class="metrics">
 
 <div class="metric">
 <strong>T0 → T1</strong>
-<span>comparação temporal</span>
+<span data-pt="comparação temporal" data-en="temporal comparison">comparação temporal</span>
 </div>
 
 <div class="metric">
 <strong>NIfTI / DICOM</strong>
-<span>compatibilidade em estudo</span>
+<span data-pt="compatibilidade em estudo" data-en="compatibility under study">compatibilidade em estudo</span>
 </div>
 
 <div class="metric">
-<strong>Auditável</strong>
-<span>pipeline rastreável</span>
+<strong data-pt="Auditável" data-en="Auditable">Auditável</strong>
+<span data-pt="pipeline rastreável" data-en="traceable pipeline">pipeline rastreável</span>
 </div>
 
 <div class="metric">
-<strong>Local</strong>
-<span>processamento controlado</span>
+<strong data-pt="Local" data-en="Local">Local</strong>
+<span data-pt="processamento controlado" data-en="controlled processing">processamento controlado</span>
 </div>
 
 </div>
@@ -480,32 +514,32 @@ JORGE Med aplica processamento determinístico e leitura estrutural a volumes m�
 <section id="conceito">
 <div class="container">
 
-<h2 class="section-title">O que o JORGE Med propõe</h2>
+<h2 class="section-title" data-pt="O que o JORGE Med propõe" data-en="What JORGE Med proposes">O que o JORGE Med propõe</h2>
 
-<p class="section-sub">
+<p class="section-sub" data-pt="Não substituir diagnóstico. E sim oferecer uma nova camada de leitura estrutural para volumes complexos." data-en="Not to replace diagnosis. But to offer a new layer of structural reading for complex volumes.">
 Não substituir diagnóstico. E sim oferecer uma nova camada de leitura estrutural para volumes complexos.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Regiões relevantes</h3>
-<p>Destaca áreas estruturalmente importantes para inspeção técnica e pesquisa.</p>
+<h3 data-pt="Regiões relevantes" data-en="Relevant regions">Regiões relevantes</h3>
+<p data-pt="Destaca áreas estruturalmente importantes para inspeção técnica e pesquisa." data-en="Highlights structurally important areas for technical inspection and research.">Destaca áreas estruturalmente importantes para inspeção técnica e pesquisa.</p>
 </div>
 
 <div class="card">
-<h3>Conectividade</h3>
-<p>Observa continuidade, fragmentação e backbone estrutural.</p>
+<h3 data-pt="Conectividade" data-en="Connectivity">Conectividade</h3>
+<p data-pt="Observa continuidade, fragmentação e backbone estrutural." data-en="Observes continuity, fragmentation and structural backbone.">Observa continuidade, fragmentação e backbone estrutural.</p>
 </div>
 
 <div class="card">
-<h3>Comparação temporal</h3>
-<p>Analisa como a estrutura mudou entre exames.</p>
+<h3 data-pt="Comparação temporal" data-en="Temporal comparison">Comparação temporal</h3>
+<p data-pt="Analisa como a estrutura mudou entre exames." data-en="Analyzes how structure changed between exams.">Analisa como a estrutura mudou entre exames.</p>
 </div>
 
 <div class="card">
-<h3>Visualização 3D/4D</h3>
-<p>Navegação volumétrica para interpretação espacial.</p>
+<h3 data-pt="Visualização 3D/4D" data-en="3D/4D Visualization">Visualização 3D/4D</h3>
+<p data-pt="Navegação volumétrica para interpretação espacial." data-en="Volumetric navigation for spatial interpretation.">Navegação volumétrica para interpretação espacial.</p>
 </div>
 
 </div>
@@ -518,42 +552,38 @@ Não substituir diagnóstico. E sim oferecer uma nova camada de leitura estrutur
 
 <div class="case-box">
 
-<h2>Determinismo importa em saúde</h2>
+<h2 data-pt="Determinismo importa em saúde" data-en="Determinism matters in healthcare">Determinismo importa em saúde</h2>
 
-<p>
+<p data-pt="Em ambientes críticos, confiança técnica exige consistência." data-en="In critical environments, technical trust requires consistency.">
 Em ambientes críticos, confiança técnica exige consistência.
 </p>
 
-<div class="statement">
-Mesma entrada.  
-Mesmo processo.  
-Mesma lógica de saída.
-</div>
+<div class="statement" data-pt="Mesma entrada. Mesmo processo. Mesma lógica de saída." data-en="Same input. Same process. Same output logic.">Mesma entrada. Mesmo processo. Mesma lógica de saída.</div>
 
-<p>
+<p data-pt="JORGE Med prioriza processamento reproduzível, auditoria de fluxo e leitura explicável." data-en="JORGE Med prioritizes reproducible processing, flow audit and explainable reading.">
 JORGE Med prioriza processamento reproduzível, auditoria de fluxo e leitura explicável.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Pipeline auditável</h3>
-<p>Etapas claras e rastreáveis.</p>
+<h3 data-pt="Pipeline auditável" data-en="Auditable pipeline">Pipeline auditável</h3>
+<p data-pt="Etapas claras e rastreáveis." data-en="Clear and traceable steps.">Etapas claras e rastreáveis.</p>
 </div>
 
 <div class="card">
-<h3>Reprodutibilidade</h3>
-<p>Resultados consistentes sob mesmas condições.</p>
+<h3 data-pt="Reprodutibilidade" data-en="Reproducibility">Reprodutibilidade</h3>
+<p data-pt="Resultados consistentes sob mesmas condições." data-en="Consistent results under same conditions.">Resultados consistentes sob mesmas condições.</p>
 </div>
 
 <div class="card">
-<h3>Camada complementar</h3>
-<p>Suporte à pesquisa e interpretação, não substituição clínica.</p>
+<h3 data-pt="Camada complementar" data-en="Complementary layer">Camada complementar</h3>
+<p data-pt="Suporte à pesquisa e interpretação, não substituição clínica." data-en="Support for research and interpretation, not clinical replacement.">Suporte à pesquisa e interpretação, não substituição clínica.</p>
 </div>
 
 </div>
 
-<div class="disclaimer">
+<div class="disclaimer" data-pt="Ferramenta experimental para pesquisa e exploração técnica. Não é dispositivo médico certificado e não substitui diagnóstico, laudo ou decisão clínica." data-en="Experimental tool for research and technical exploration. Not a certified medical device and does not replace diagnosis, medical report or clinical decision.">
 Ferramenta experimental para pesquisa e exploração técnica. Não é dispositivo médico certificado e não substitui diagnóstico, laudo ou decisão clínica.
 </div>
 
@@ -565,9 +595,9 @@ Ferramenta experimental para pesquisa e exploração técnica. Não é dispositi
 <section id="casos">
 <div class="container">
 
-<h2 class="section-title">Casos experimentais em imagem médica</h2>
+<h2 class="section-title" data-pt="Casos experimentais em imagem médica" data-en="Experimental cases in medical imaging">Casos experimentais em imagem médica</h2>
 
-<p class="section-sub">
+<p class="section-sub" data-pt="Visualizações geradas pelo JORGE Med em volumes médicos reais, demonstrando leitura estrutural, distribuição espacial e regiões de interesse para investigação técnica." data-en="Visualizations generated by JORGE Med in real medical volumes, demonstrating structural reading, spatial distribution and regions of interest for technical investigation.">
 Visualizações geradas pelo JORGE Med em volumes médicos reais, demonstrando leitura estrutural, distribuição espacial e regiões de interesse para investigação técnica.
 </p>
 
@@ -575,19 +605,19 @@ Visualizações geradas pelo JORGE Med em volumes médicos reais, demonstrando l
 
 <div class="card">
 <img src="med_estrutura_focal.png" alt="Leitura focal estrutural em volume médico no JORGE Med">
-<h3>Leitura focal estrutural</h3>
-<p>Destaque visual de regiões estruturalmente relevantes em volume médico para inspeção técnica e pesquisa.</p>
+<h3 data-pt="Leitura focal estrutural" data-en="Focal structural reading">Leitura focal estrutural</h3>
+<p data-pt="Destaque visual de regiões estruturalmente relevantes em volume médico para inspeção técnica e pesquisa." data-en="Visual highlight of structurally relevant regions in medical volume for technical inspection and research.">Destaque visual de regiões estruturalmente relevantes em volume médico para inspeção técnica e pesquisa.</p>
 </div>
 
 <div class="card">
 <img src="med_distribuicao_estrutural.png" alt="Distribuição estrutural global em volume médico no JORGE Med">
-<h3>Distribuição estrutural global</h3>
-<p>Mapeamento espacial complementar para observar organização, conectividade e distribuição interna do volume.</p>
+<h3 data-pt="Distribuição estrutural global" data-en="Global structural distribution">Distribuição estrutural global</h3>
+<p data-pt="Mapeamento espacial complementar para observar organização, conectividade e distribuição interna do volume." data-en="Complementary spatial mapping to observe organization, connectivity and internal distribution of the volume.">Mapeamento espacial complementar para observar organização, conectividade e distribuição interna do volume.</p>
 </div>
 
 </div>
 
-<div class="disclaimer">
+<div class="disclaimer" data-pt="As imagens são exemplos experimentais de visualização estrutural. Não representam diagnóstico, laudo médico ou indicação clínica autônoma." data-en="The images are experimental examples of structural visualization. They do not represent diagnosis, medical report or autonomous clinical indication.">
 As imagens são exemplos experimentais de visualização estrutural. Não representam diagnóstico, laudo médico ou indicação clínica autônoma.
 </div>
 
@@ -597,27 +627,27 @@ As imagens são exemplos experimentais de visualização estrutural. Não repres
 <section id="pesquisa">
 <div class="container">
 
-<h2 class="section-title">Parcerias e validação</h2>
+<h2 class="section-title" data-pt="Parcerias e validação" data-en="Partnerships and validation">Parcerias e validação</h2>
 
-<p class="section-sub">
+<p class="section-sub" data-pt="O caminho responsável é validar junto de especialistas, datasets controlados e objetivos claros." data-en="The responsible path is to validate with specialists, controlled datasets and clear objectives.">
 O caminho responsável é validar junto de especialistas, datasets controlados e objetivos claros.
 </p>
 
 <div class="steps">
 
 <div class="step">
-<strong>1. Caso de estudo</strong>
-<span>Glioma, T0/T1, base retrospectiva ou comparação específica.</span>
+<strong data-pt="1. Caso de estudo" data-en="1. Case study">1. Caso de estudo</strong>
+<span data-pt="Glioma, T0/T1, base retrospectiva ou comparação específica." data-en="Glioma, T0/T1, retrospective database or specific comparison.">Glioma, T0/T1, base retrospectiva ou comparação específica.</span>
 </div>
 
 <div class="step">
-<strong>2. Processamento</strong>
-<span>Leitura estrutural + visualização + métricas.</span>
+<strong data-pt="2. Processamento" data-en="2. Processing">2. Processamento</strong>
+<span data-pt="Leitura estrutural + visualização + métricas." data-en="Structural reading + visualization + metrics.">Leitura estrutural + visualização + métricas.</span>
 </div>
 
 <div class="step">
-<strong>3. Avaliação</strong>
-<span>Especialistas verificam utilidade real do sinal gerado.</span>
+<strong data-pt="3. Avaliação" data-en="3. Evaluation">3. Avaliação</strong>
+<span data-pt="Especialistas verificam utilidade real do sinal gerado." data-en="Specialists verify actual utility of generated signal.">Especialistas verificam utilidade real do sinal gerado.</span>
 </div>
 
 </div>
@@ -628,16 +658,16 @@ O caminho responsável é validar junto de especialistas, datasets controlados e
 <section class="band" id="contato">
 <div class="container band-inner">
 
-<h2>Buscando parcerias médicas e científicas</h2>
+<h2 data-pt="Buscando parcerias médicas e científicas" data-en="Seeking medical and scientific partnerships">Buscando parcerias médicas e científicas</h2>
 
-<p>
+<p data-pt="Radiologistas, pesquisadores, universidades e laboratórios interessados em validação séria são bem-vindos." data-en="Radiologists, researchers, universities and laboratories interested in serious validation are welcome.">
 Radiologistas, pesquisadores, universidades e laboratórios interessados em validação séria são bem-vindos.
 </p>
 
 <div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20falar%20sobre%20JORGE%20Med." target="_blank">Entrar em contato</a>
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20falar%20sobre%20JORGE%20Med." target="_blank" data-pt="Entrar em contato" data-en="Get in touch">Entrar em contato</a>
 <a class="btn btn-secondary" href="https://www.linkedin.com/in/gabriel-gazola/" target="_blank">LinkedIn</a>
-<a class="btn btn-secondary" href="./">Voltar</a>
+<a class="btn btn-secondary" href="./" data-pt="Voltar" data-en="Back">Voltar</a>
 </div>
 
 </div>
@@ -645,9 +675,81 @@ Radiologistas, pesquisadores, universidades e laboratórios interessados em vali
 
 <footer>
 <div class="container">
-JORGE Med © 2026 • Inteligência Estrutural em Imagem Médica • Uso experimental
+<div data-pt="JORGE Med © 2026 • Inteligência Estrutural em Imagem Médica • Uso experimental" data-en="JORGE Med © 2026 • Structural Intelligence in Medical Imaging • Experimental use">JORGE Med © 2026 • Inteligência Estrutural em Imagem Médica • Uso experimental</div>
 </div>
 </footer>
+
+<script>
+// Sistema de tradução completo e funcional
+const translations = {
+  pt: {},
+  en: {}
+};
+
+// Carrega as traduções dos atributos data-pt e data-en
+function loadTranslations() {
+  document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+    const key = el.getAttribute('data-pt');
+    const enText = el.getAttribute('data-en');
+
+    if (key && enText) {
+      if (!translations.pt[key]) translations.pt[key] = key;
+      if (!translations.en[key]) translations.en[key] = enText;
+    }
+  });
+}
+
+// Define o idioma e muda todo conteúdo
+function setLang(lang) {
+  // Valida se o idioma é válido
+  if (lang !== 'pt' && lang !== 'en') return;
+
+  // Atualiza localStorage
+  localStorage.setItem('preferredLang', lang);
+
+  // Atualiza botões
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    }
+  });
+
+  // Traduz elementos
+  document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+    const ptText = el.getAttribute('data-pt');
+    const enText = el.getAttribute('data-en');
+
+    if (lang === 'en') {
+      el.innerHTML = enText;
+    } else {
+      el.innerHTML = ptText;
+    }
+  });
+
+  // Atualiza atributo lang do HTML
+  document.documentElement.lang = lang === 'en' ? 'en-US' : 'pt-BR';
+
+  // Dispara evento customizado caso precise usar em outros scripts
+  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+}
+
+// Inicializa
+document.addEventListener('DOMContentLoaded', function () {
+  loadTranslations();
+
+  // Verifica idioma salvo ou usa o padrão do navegador
+  let savedLang = localStorage.getItem('preferredLang');
+
+  if (!savedLang) {
+    // Se não tem idioma salvo, usa o idioma do navegador
+    const browserLang = navigator.language.split('-')[0];
+    savedLang = (browserLang === 'en') ? 'en' : 'pt';
+  }
+
+  setLang(savedLang);
+});
+</script>
 
 </body>
 </html>
