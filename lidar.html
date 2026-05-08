@@ -14,7 +14,7 @@ gtag('config', 'G-71YETQYR21');
 
 <meta name="viewport" content="width=device-width,initial-scale=1">
 
-<title>JORGE LiDAR — Leitura Estrutural para Nuvens de Pontos Massivas</title>
+<title data-pt="JORGE LiDAR — Leitura Estrutural para Nuvens de Pontos Massivas" data-en="JORGE LiDAR — Structural Reading for Massive Point Clouds">JORGE LiDAR — Leitura Estrutural para Nuvens de Pontos Massivas</title>
 
 <link rel="icon" type="image/x-icon" href="jorge_icon.ico">
 
@@ -84,6 +84,35 @@ font-size:14px;
 
 .nav-links a:hover{
 color:#ffffff;
+}
+
+.lang-switcher{
+margin-left:12px;
+display:flex;
+gap:6px;
+}
+
+.lang-btn{
+background:none;
+border:1px solid #fff3;
+color:#fff;
+padding:4px 8px;
+border-radius:6px;
+cursor:pointer;
+transition:.2s;
+font-size:12px;
+font-weight:600;
+}
+
+.lang-btn:hover{
+border-color:#27c2ff;
+color:#27c2ff;
+}
+
+.lang-btn.active{
+background:#27c2ff;
+color:#03131f;
+border-color:#27c2ff;
 }
 
 .hero{
@@ -189,6 +218,15 @@ margin-bottom:6px;
 .metric span{
 font-size:14px;
 color:#8fa4c0;
+}
+
+.specs{
+font-size:15px;
+color:#91a8c6;
+margin-top:16px;
+padding:12px;
+background:rgba(39,194,255,.04);
+border-radius:8px;
 }
 
 section{
@@ -368,16 +406,21 @@ border-top:1px solid rgba(255,255,255,.05);
 
 <a href="index.html" class="logo">
 <img src="jorge_logo.png" alt="Logo JORGE Engine">
-<span>JORGE LiDAR</span>
+<span data-pt="JORGE LiDAR" data-en="JORGE LiDAR">JORGE LiDAR</span>
 </a>
 
 <div class="nav-links">
-<a href="index.html">Plataforma</a>
-<a href="#valor">Valor</a>
-<a href="#performance">Performance</a>
-<a href="#casos">Casos reais</a>
-<a href="#piloto">Piloto</a>
-<a href="#contato">Contato</a>
+<a href="index.html" data-pt="Plataforma" data-en="Platform">Plataforma</a>
+<a href="#valor" data-pt="Valor" data-en="Value">Valor</a>
+<a href="#performance" data-pt="Performance" data-en="Performance">Performance</a>
+<a href="#casos" data-pt="Casos reais" data-en="Real cases">Casos reais</a>
+<a href="#piloto" data-pt="Piloto" data-en="Pilot">Piloto</a>
+<a href="#contato" data-pt="Contato" data-en="Contact">Contato</a>
+
+<div class="lang-switcher">
+<button class="lang-btn active" onclick="setLang('pt')" data-lang="pt">PT</button>
+<button class="lang-btn" onclick="setLang('en')" data-lang="en">EN</button>
+</div>
 </div>
 
 </div>
@@ -386,47 +429,49 @@ border-top:1px solid rgba(255,255,255,.05);
 <section class="hero">
 <div class="container">
 
-<div class="badge">JORGE LiDAR • Nuvens massivas com leitura clara</div>
+<div class="badge" data-pt="JORGE LiDAR • Nuvens massivas com leitura clara" data-en="JORGE LiDAR • Massive point clouds with clear reading">JORGE LiDAR • Nuvens massivas com leitura clara</div>
 
-<h1>132 milhões de pontos.<br>Rodando localmente.</h1>
+<h1 data-pt="220 milhões de pontos.<br>12 minutos em hardware comum." data-en="220 million points.<br>12 minutes on common hardware.">220 milhões de pontos.<br>12 minutos em hardware comum.</h1>
 
-<p>
+<p data-pt="O JORGE LiDAR transforma nuvens de pontos densas em leitura estrutural navegável para engenharia, topografia, cidades e infraestrutura." data-en="JORGE LiDAR transforms dense point clouds into navigable structural reading for engineering, surveying, cities and infrastructure.">
 O JORGE LiDAR transforma nuvens de pontos densas em leitura estrutural navegável para engenharia, topografia, cidades e infraestrutura.
 </p>
 
-<p class="sub">
+<p class="sub" data-pt="Processamento local, visualização interativa, relevância espacial e performance em datasets que desafiam viewers convencionais." data-en="Local processing, interactive visualization, spatial relevance and performance on datasets that challenge conventional viewers.">
 Processamento local, visualização interativa, relevância espacial e performance em datasets que desafiam viewers convencionais.
 </p>
 
 <div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20testar%20o%20JORGE%20LiDAR%20com%20meu%20arquivo." target="_blank">Testar com meu arquivo</a>
-<a class="btn btn-secondary" href="#casos">Ver casos reais</a>
-<a class="btn btn-secondary" href="index.html">Ver plataforma</a>
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20quero%20testar%20o%20JORGE%20LiDAR%20com%20meu%20arquivo." target="_blank" data-pt="Testar com meu arquivo" data-en="Test with my file">Testar com meu arquivo</a>
+<a class="btn btn-secondary" href="#casos" data-pt="Ver casos reais" data-en="See real cases">Ver casos reais</a>
+<a class="btn btn-secondary" href="index.html" data-pt="Ver plataforma" data-en="View platform">Ver plataforma</a>
 </div>
 
 <div class="metrics">
 
 <div class="metric">
-<strong>132M+</strong>
-<span>pontos processados em validação</span>
+<strong>220M+</strong>
+<span data-pt="pontos processados em validação" data-en="points processed validated">pontos processados em validação</span>
 </div>
 
 <div class="metric">
-<strong>Local</strong>
-<span>execução desktop</span>
+<strong>12 min</strong>
+<span data-pt="tempo de processamento" data-en="processing time">tempo de processamento</span>
 </div>
 
 <div class="metric">
 <strong>LAS / LAZ / E57</strong>
-<span>formatos alvo</span>
+<span data-pt="formatos alvo" data-en="target formats">formatos alvo</span>
 </div>
 
 <div class="metric">
-<strong>Viewer</strong>
-<span>filtros, foco e navegação</span>
+<strong data-pt="Viewer" data-en="Viewer">Viewer</strong>
+<span data-pt="filtros, foco e navegação" data-en="filters, focus and navigation">filtros, foco e navegação</span>
 </div>
 
 </div>
+
+<div class="specs" data-pt="Specs: Intel i7 • 16GB RAM • Notebook comum" data-en="Specs: Intel i7 • 16GB RAM • Standard notebook">Specs: Intel i7 • 16GB RAM • Notebook comum</div>
 
 </div>
 </section>
@@ -434,32 +479,32 @@ Processamento local, visualização interativa, relevância espacial e performan
 <section id="valor">
 <div class="container">
 
-<h2 class="section-title">O problema não é gerar o scan. É interpretar rápido.</h2>
+<h2 class="section-title" data-pt="O problema não é gerar o scan. É interpretar rápido." data-en="The problem is not generating the scan. It's interpreting it fast.">O problema não é gerar o scan. É interpretar rápido.</h2>
 
-<p class="section-sub">
+<p class="section-sub" data-pt="Empresas e equipes técnicas já possuem drones, sensores e scanners. O gargalo frequentemente está em transformar milhões de pontos em leitura útil." data-en="Companies and technical teams already have drones, sensors and scanners. The bottleneck is often transforming millions of points into useful reading.">
 Empresas e equipes técnicas já possuem drones, sensores e scanners. O gargalo frequentemente está em transformar milhões de pontos em leitura útil.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Visualização confusa</h3>
-<p>Grandes nuvens podem virar massa visual sem hierarquia clara.</p>
+<h3 data-pt="Visualização confusa" data-en="Confusing visualization">Visualização confusa</h3>
+<p data-pt="Grandes nuvens podem virar massa visual sem hierarquia clara." data-en="Large clouds can become visual mass without clear hierarchy.">Grandes nuvens podem virar massa visual sem hierarquia clara.</p>
 </div>
 
 <div class="card">
-<h3>Tempo de análise alto</h3>
-<p>Horas navegando arquivos para encontrar o que importa.</p>
+<h3 data-pt="Tempo de análise alto" data-en="High analysis time">Tempo de análise alto</h3>
+<p data-pt="Horas navegando arquivos para encontrar o que importa." data-en="Hours navigating files to find what matters.">Horas navegando arquivos para encontrar o que importa.</p>
 </div>
 
 <div class="card">
-<h3>Hardware pressionado</h3>
-<p>Datasets densos podem travar fluxos comuns de trabalho.</p>
+<h3 data-pt="Hardware pressionado" data-en="Hardware pressure">Hardware pressionado</h3>
+<p data-pt="Datasets densos podem travar fluxos comuns de trabalho." data-en="Dense datasets can disrupt common workflows.">Datasets densos podem travar fluxos comuns de trabalho.</p>
 </div>
 
 <div class="card">
-<h3>Decisão lenta</h3>
-<p>Sem leitura clara, reuniões e operações perdem velocidade.</p>
+<h3 data-pt="Decisão lenta" data-en="Slow decision">Decisão lenta</h3>
+<p data-pt="Sem leitura clara, reuniões e operações perdem velocidade." data-en="Without clear reading, meetings and operations lose speed.">Sem leitura clara, reuniões e operações perdem velocidade.</p>
 </div>
 
 </div>
@@ -472,35 +517,33 @@ Empresas e equipes técnicas já possuem drones, sensores e scanners. O gargalo 
 
 <div class="case-box">
 
-<h2>O diferencial central</h2>
+<h2 data-pt="O diferencial central" data-en="The central differentiator">O diferencial central</h2>
 
-<p>
+<p data-pt="O JORGE LiDAR foi construído para lidar com volume real, não apenas demos pequenas." data-en="JORGE LiDAR was built to handle real volume, not just small demos.">
 O JORGE LiDAR foi construído para lidar com volume real, não apenas demos pequenas.
 </p>
 
-<div class="statement">
-132 milhões de pontos em arquivo LAZ processados e navegáveis em ambiente desktop local.
-</div>
+<div class="statement" data-pt="220 milhões de pontos em arquivo LAZ processados e navegáveis em ambiente desktop local em 12 minutos." data-en="220 million points in LAZ file processed and navigable in local desktop environment in 12 minutes.">220 milhões de pontos em arquivo LAZ processados e navegáveis em ambiente desktop local em 12 minutos.</div>
 
-<p>
+<p data-pt="Isso significa sair do discurso e entrar em capacidade operacional concreta." data-en="This means leaving the discourse and entering concrete operational capability.">
 Isso significa sair do discurso e entrar em capacidade operacional concreta.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Escala</h3>
-<p>Projetado para datasets extensos e densos.</p>
+<h3 data-pt="Escala" data-en="Scale">Escala</h3>
+<p data-pt="Projetado para datasets extensos e densos." data-en="Designed for extensive and dense datasets.">Projetado para datasets extensos e densos.</p>
 </div>
 
 <div class="card">
-<h3>Leitura estrutural</h3>
-<p>Destaca regiões relevantes e organização espacial.</p>
+<h3 data-pt="Leitura estrutural" data-en="Structural reading">Leitura estrutural</h3>
+<p data-pt="Destaca regiões relevantes e organização espacial." data-en="Highlights relevant regions and spatial organization.">Destaca regiões relevantes e organização espacial.</p>
 </div>
 
 <div class="card">
-<h3>Execução local</h3>
-<p>Sem depender de upload para nuvem pública.</p>
+<h3 data-pt="Execução local" data-en="Local execution">Execução local</h3>
+<p data-pt="Sem depender de upload para nuvem pública." data-en="No dependence on public cloud upload.">Sem depender de upload para nuvem pública.</p>
 </div>
 
 </div>
@@ -513,9 +556,9 @@ Isso significa sair do discurso e entrar em capacidade operacional concreta.
 <section id="casos">
 <div class="container">
 
-<h2 class="section-title">Casos reais em São Paulo</h2>
+<h2 class="section-title" data-pt="Casos reais em São Paulo" data-en="Real cases in São Paulo">Casos reais em São Paulo</h2>
 
-<p class="section-sub">
+<p class="section-sub" data-pt="Arquivos LAZ reais processados localmente no JORGE Engine, demonstrando leitura estrutural em ambiente urbano, relevo, vegetação e massa construída." data-en="Real LAZ files processed locally in JORGE Engine, demonstrating structural reading in urban environment, terrain, vegetation and built mass.">
 Arquivos LAZ reais processados localmente no JORGE Engine, demonstrando leitura estrutural em ambiente urbano, relevo, vegetação e massa construída.
 </p>
 
@@ -523,14 +566,14 @@ Arquivos LAZ reais processados localmente no JORGE Engine, demonstrando leitura 
 
 <div class="card">
 <img src="sp_lidar_urbano.png" alt="LiDAR urbano em São Paulo processado no JORGE Engine">
-<h3>Ambiente urbano</h3>
-<p>Edificações, vegetação e organização espacial em nuvem de pontos real.</p>
+<h3 data-pt="Ambiente urbano" data-en="Urban environment">Ambiente urbano</h3>
+<p data-pt="Edificações, vegetação e organização espacial em nuvem de pontos real." data-en="Buildings, vegetation and spatial organization in real point cloud.">Edificações, vegetação e organização espacial em nuvem de pontos real.</p>
 </div>
 
 <div class="card">
 <img src="sp_lidar_relevo.png" alt="LiDAR relevo e vegetação em São Paulo processado no JORGE Engine">
-<h3>Relevo e vegetação</h3>
-<p>Terreno complexo para aplicações em geologia, drenagem e infraestrutura.</p>
+<h3 data-pt="Relevo e vegetação" data-en="Terrain and vegetation">Relevo e vegetação</h3>
+<p data-pt="Terreno complexo para aplicações em geologia, drenagem e infraestrutura." data-en="Complex terrain for geology, drainage and infrastructure applications.">Terreno complexo para aplicações em geologia, drenagem e infraestrutura.</p>
 </div>
 
 </div>
@@ -541,32 +584,32 @@ Arquivos LAZ reais processados localmente no JORGE Engine, demonstrando leitura 
 <section>
 <div class="container">
 
-<h2 class="section-title">Onde pode ajudar</h2>
+<h2 class="section-title" data-pt="Onde pode ajudar" data-en="Where it can help">Onde pode ajudar</h2>
 
-<p class="section-sub">
+<p class="section-sub" data-pt="Primeiras aplicações comerciais e técnicas para a vertical LiDAR." data-en="First commercial and technical applications for the LiDAR vertical.">
 Primeiras aplicações comerciais e técnicas para a vertical LiDAR.
 </p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Topografia</h3>
-<p>Terreno, curvas, relevo e leitura espacial ampla.</p>
+<h3 data-pt="Topografia" data-en="Surveying">Topografia</h3>
+<p data-pt="Terreno, curvas, relevo e leitura espacial ampla." data-en="Terrain, contours, relief and broad spatial reading.">Terreno, curvas, relevo e leitura espacial ampla.</p>
 </div>
 
 <div class="card">
-<h3>Cidades</h3>
-<p>Infraestrutura urbana, volumes e organização territorial.</p>
+<h3 data-pt="Cidades" data-en="Cities">Cidades</h3>
+<p data-pt="Infraestrutura urbana, volumes e organização territorial." data-en="Urban infrastructure, volumes and territorial organization.">Infraestrutura urbana, volumes e organização territorial.</p>
 </div>
 
 <div class="card">
-<h3>Vegetação</h3>
-<p>Camadas, densidade e estrutura ambiental.</p>
+<h3 data-pt="Vegetação" data-en="Vegetation">Vegetação</h3>
+<p data-pt="Camadas, densidade e estrutura ambiental." data-en="Layers, density and environmental structure.">Camadas, densidade e estrutura ambiental.</p>
 </div>
 
 <div class="card">
-<h3>Inspeção</h3>
-<p>Ambientes técnicos, obras e comparação visual.</p>
+<h3 data-pt="Inspeção" data-en="Inspection">Inspeção</h3>
+<p data-pt="Ambientes técnicos, obras e comparação visual." data-en="Technical environments, works and visual comparison.">Ambientes técnicos, obras e comparação visual.</p>
 </div>
 
 </div>
@@ -577,27 +620,27 @@ Primeiras aplicações comerciais e técnicas para a vertical LiDAR.
 <section id="piloto">
 <div class="container">
 
-<h2 class="section-title">Piloto Técnico JORGE LiDAR</h2>
+<h2 class="section-title" data-pt="Piloto Técnico JORGE LiDAR" data-en="JORGE LiDAR Technical Pilot">Piloto Técnico JORGE LiDAR</h2>
 
-<p class="section-sub">
+<p class="section-sub" data-pt="Traga um arquivo real e valide se o JORGE gera valor no seu fluxo." data-en="Bring a real file and validate if JORGE generates value in your workflow.">
 Traga um arquivo real e valide se o JORGE gera valor no seu fluxo.
 </p>
 
 <div class="steps">
 
 <div class="step">
-<strong>1. Envie amostra</strong>
-<span>Arquivo LAS, LAZ, E57 ou dataset equivalente.</span>
+<strong data-pt="1. Envie amostra" data-en="1. Send sample">1. Envie amostra</strong>
+<span data-pt="Arquivo LAS, LAZ, E57 ou dataset equivalente." data-en="LAS, LAZ, E57 file or equivalent dataset.">Arquivo LAS, LAZ, E57 ou dataset equivalente.</span>
 </div>
 
 <div class="step">
-<strong>2. Processamos</strong>
-<span>Geramos leitura estrutural e viewer navegável.</span>
+<strong data-pt="2. Processamos" data-en="2. We process">2. Processamos</strong>
+<span data-pt="Geramos leitura estrutural e viewer navegável." data-en="Generate structural reading and navigable viewer.">Geramos leitura estrutural e viewer navegável.</span>
 </div>
 
 <div class="step">
-<strong>3. Avaliamos juntos</strong>
-<span>Reunião curta para medir aderência real.</span>
+<strong data-pt="3. Avaliamos juntos" data-en="3. Evaluate together">3. Avaliamos juntos</strong>
+<span data-pt="Reunião curta para medir aderência real." data-en="Short meeting to measure real adherence.">Reunião curta para medir aderência real.</span>
 </div>
 
 </div>
@@ -608,15 +651,15 @@ Traga um arquivo real e valide se o JORGE gera valor no seu fluxo.
 <section class="band" id="contato">
 <div class="container band-inner">
 
-<h2>Tem um dataset pesado hoje?</h2>
+<h2 data-pt="Tem um dataset pesado hoje?" data-en="Have a heavy dataset today?">Tem um dataset pesado hoje?</h2>
 
-<p>
+<p data-pt="Vamos testar com dado real e ver se o JORGE reduz atrito operacional." data-en="Let's test with real data and see if JORGE reduces operational friction.">
 Vamos testar com dado real e ver se o JORGE reduz atrito operacional.
 </p>
 
 <div class="cta">
-<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20tenho%20um%20dataset%20LiDAR%20e%20quero%20testar%20o%20JORGE." target="_blank">Falar no WhatsApp</a>
-<a class="btn btn-secondary" href="index.html">Voltar para plataforma</a>
+<a class="btn btn-primary" href="https://wa.me/5511986292842?text=Olá,%20tenho%20um%20dataset%20LiDAR%20e%20quero%20testar%20o%20JORGE." target="_blank" data-pt="Falar no WhatsApp" data-en="Talk on WhatsApp">Falar no WhatsApp</a>
+<a class="btn btn-secondary" href="index.html" data-pt="Voltar para plataforma" data-en="Back to platform">Voltar para plataforma</a>
 </div>
 
 </div>
@@ -624,9 +667,81 @@ Vamos testar com dado real e ver se o JORGE reduz atrito operacional.
 
 <footer>
 <div class="container">
-JORGE LiDAR © 2026 • Leitura estrutural para nuvens de pontos massivas
+<div data-pt="JORGE LiDAR © 2026 • Leitura estrutural para nuvens de pontos massivas" data-en="JORGE LiDAR © 2026 • Structural reading for massive point clouds">JORGE LiDAR © 2026 • Leitura estrutural para nuvens de pontos massivas</div>
 </div>
 </footer>
+
+<script>
+// Sistema de tradução completo e funcional
+const translations = {
+  pt: {},
+  en: {}
+};
+
+// Carrega as traduções dos atributos data-pt e data-en
+function loadTranslations() {
+  document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+    const key = el.getAttribute('data-pt');
+    const enText = el.getAttribute('data-en');
+
+    if (key && enText) {
+      if (!translations.pt[key]) translations.pt[key] = key;
+      if (!translations.en[key]) translations.en[key] = enText;
+    }
+  });
+}
+
+// Define o idioma e muda todo conteúdo
+function setLang(lang) {
+  // Valida se o idioma é válido
+  if (lang !== 'pt' && lang !== 'en') return;
+
+  // Atualiza localStorage
+  localStorage.setItem('preferredLang', lang);
+
+  // Atualiza botões
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-lang') === lang) {
+      btn.classList.add('active');
+    }
+  });
+
+  // Traduz elementos
+  document.querySelectorAll('[data-pt][data-en]').forEach(el => {
+    const ptText = el.getAttribute('data-pt');
+    const enText = el.getAttribute('data-en');
+
+    if (lang === 'en') {
+      el.innerHTML = enText;
+    } else {
+      el.innerHTML = ptText;
+    }
+  });
+
+  // Atualiza atributo lang do HTML
+  document.documentElement.lang = lang === 'en' ? 'en-US' : 'pt-BR';
+
+  // Dispara evento customizado caso precise usar em outros scripts
+  window.dispatchEvent(new CustomEvent('languageChanged', { detail: { lang } }));
+}
+
+// Inicializa
+document.addEventListener('DOMContentLoaded', function () {
+  loadTranslations();
+
+  // Verifica idioma salvo ou usa o padrão do navegador
+  let savedLang = localStorage.getItem('preferredLang');
+
+  if (!savedLang) {
+    // Se não tem idioma salvo, usa o idioma do navegador
+    const browserLang = navigator.language.split('-')[0];
+    savedLang = (browserLang === 'en') ? 'en' : 'pt';
+  }
+
+  setLang(savedLang);
+});
+</script>
 
 </body>
 </html>
